@@ -3,9 +3,6 @@
 A Mad Television Tycoon content mod: 80 Portuguese films (1981–2005) with their directors, cast and pictures.
 Status on 5 October 2026: built, installed and working in game.
 
-Handoff page (dataset, schema, findings, open work): https://claude.ai/artifact/U7Se22pASxZ7ADzA21ydn5
-Its working copy is `data/pacote-portugues.html`.
-
 ## Layout
 
 | Folder | What's in it |
@@ -49,19 +46,3 @@ Re-run `install_mod.py` after every game update.
 - The installer only deletes files it wrote and that are unchanged (checked by SHA-1).
 - Pak tools used for research (repak, kismet-analyzer) are not part of the project. See the handoff page §2 for what
   was learned from the game's code.
-
-## Next
-
-1. Images: lookalikes are being made in Gemini from the prompts in `data/image_prompts.csv` (text-to-image works
-   best). Save each with `.venv/bin/python tools/match_generated.py IMAGE [--id ID] [--kind i2i|t2i]`.
-   All 80 done on 18 October 2026, one per film in `stills/generated/`. `convert_stills.py` now uses them
-   (greyscale, centre 4:3; it falls back to the TMDB still only when a film has no generated image) and they
-   are installed. `stills/png/_compare.jpg` shows each TMDB still next to its replacement.
-2. Premium flag: none in the mod (owner's decision, 18 October 2026). Removed from the 7 festival films via
-   `data_overrides.json`, and `build_items.py` no longer writes it.
-3. Parody titles approved and installed on 18 October 2026: `Name` and `Name_DE` get the English parody,
-   `Name_PTBR` the one in the original language (from `data/titles.csv`). Still to do: in-game check of
-   titles and images. The *Inferno* synopsis was verified and filled in the same day.
-5. Publishing (zip from `tools/package.py`; Windows test of Install.bat/Uninstall.bat pending): ModDB (main page) and Nexus. Say that the images are AI-generated, and that the mod replaces
-   the game's ItemsData/CastData (via `MOD/`), so it can't be combined with other content mods.
-4. After publishing: titles and synopses in the other languages (ES, FR, HK, PL, RU, TU, a proper DE, `Desc_PTBR`).
