@@ -1,0 +1,626 @@
+<title>Pacote Português — Handoff</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F2F4F3; --surface:#FBFCFC; --ink:#131A1E; --ink-2:#3C4A4F; --muted:#5F6E72;
+  --hair:#D5DCDB; --hair-2:#E4EAE9; --cobalt:#1F5B94; --brick:#B35333; --chip:#E6ECEB;
+  --ok:#2F6D4F; --warn:#8A6412;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#101618; --surface:#182126; --ink:#E2E9E9; --ink-2:#BCC9CB; --muted:#8B9A9E;
+  --hair:#27353A; --hair-2:#1F2B30; --cobalt:#4E90C9; --brick:#D2764F; --chip:#222F34;
+  --ok:#6FB58C; --warn:#D4A843;
+}}
+:root[data-theme="dark"]{
+  --paper:#101618; --surface:#182126; --ink:#E2E9E9; --ink-2:#BCC9CB; --muted:#8B9A9E;
+  --hair:#27353A; --hair-2:#1F2B30; --cobalt:#4E90C9; --brick:#D2764F; --chip:#222F34;
+  --ok:#6FB58C; --warn:#D4A843;
+}
+*{box-sizing:border-box}
+body{background:var(--paper); color:var(--ink); margin:0;
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,sans-serif; font-size:15px; line-height:1.55}
+.wrap{max-width:900px; margin:0 auto; padding-inline:20px; padding-block:40px 72px}
+h1{font-family:"Bodoni Moda",Georgia,serif; font-weight:400; font-size:clamp(34px,6vw,54px);
+  line-height:1.05; margin:0; letter-spacing:-.01em; text-wrap:balance}
+.eyebrow{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 10px}
+.lede{max-width:64ch; color:var(--ink-2); margin:14px 0 0; font-size:16px}
+h2{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); margin:44px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--hair)}
+h3{font-size:15px; margin:24px 0 6px; font-weight:600}
+p{margin:0 0 12px; max-width:68ch}
+code{font-family:"IBM Plex Mono",monospace; font-size:12.5px; background:var(--chip);
+  padding:1px 5px; border-radius:3px; color:var(--ink-2)}
+table{border-collapse:collapse; width:100%; font-size:13.5px; margin:4px 0 16px}
+th{text-align:left; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted); font-weight:500; padding:6px 10px 6px 0;
+  border-bottom:1px solid var(--hair)}
+td{padding:7px 10px 7px 0; border-bottom:1px solid var(--hair-2); vertical-align:top}
+td:first-child{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink); white-space:nowrap}
+.tally{display:flex; flex-wrap:wrap; gap:8px 26px; margin-top:20px;
+  font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted)}
+.tally b{color:var(--ink); font-weight:500}
+.flag{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.06em;
+  text-transform:uppercase; padding:2px 6px; border-radius:2px; margin-right:6px}
+.v{background:var(--chip); color:var(--ok)} .u{background:var(--chip); color:var(--warn)}
+.data{border:1px solid var(--hair); border-radius:4px; background:var(--surface); margin-top:8px}
+.data-head{display:flex; align-items:center; gap:12px; padding:10px 12px; border-bottom:1px solid var(--hair);
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--muted)}
+button{font-family:"IBM Plex Mono",monospace; font-size:11.5px; cursor:pointer; color:var(--surface);
+  background:var(--cobalt); border:0; border-radius:3px; padding:5px 11px}
+button.ghost{background:transparent; color:var(--cobalt); border:1px solid var(--hair)}
+button:active{transform:translateY(1px)}
+pre{margin:0; padding:12px; overflow:auto; max-height:420px; font-family:"IBM Plex Mono",monospace;
+  font-size:11px; line-height:1.5; color:var(--ink-2); white-space:pre-wrap; word-break:break-word}
+.note{border-left:2px solid var(--brick); padding:2px 0 2px 14px; margin:14px 0; color:var(--ink-2); font-size:14px}
+ul{margin:0 0 14px; padding-left:20px; max-width:68ch} li{margin-bottom:6px}
+:focus-visible{outline:2px solid var(--cobalt); outline-offset:2px}
+footer{margin-top:48px; padding-top:18px; border-top:1px solid var(--hair); color:var(--muted); font-size:12.5px}
+@media (max-width:620px){ td:first-child{white-space:normal} }
+.scroll{overflow-x:auto}
+details{border:1px solid var(--hair); border-radius:4px; background:var(--surface); margin:6px 0 18px; padding:0 12px}
+summary{cursor:pointer; padding:9px 0; font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--cobalt)}
+details[open] summary{border-bottom:1px solid var(--hair); margin-bottom:8px}
+td.num{font-variant-numeric:tabular-nums}
+ol.steps{margin:0 0 14px; padding-left:22px; max-width:68ch} ol.steps li{margin-bottom:12px}
+ol.steps li::marker{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted)}
+</style>
+
+<div class="wrap">
+<p class="eyebrow">Mad Television Tycoon · content mod · handoff</p>
+<h1>Pacote Português</h1>
+<p class="lede">Eighty Portuguese films, 1981–2005, prepared as <code>ItemTyp 1</code> entries for
+<code>EXTERN/DATABASE/MOD/</code>. This page is the handoff: the dataset, the schema contract, what is verified
+against the game, what remains open, and where the work stands.</p>
+<p class="lede"><strong>Status, 19 October 2026:</strong> ready to publish. Titles and names are parodies in the game's own
+style, every picture is a made-up black-and-white lookalike, and a double-click Windows installer has been tested end to end
+(uninstall, install, new game). Next up: the mod pages for ModDB and Nexus (§4).</p>
+<div class="tally">
+  <span><b>80</b> films</span><span><b>35</b> Potential from real admissions</span>
+  <span><b>51</b> Rating from awards</span><span><b>79</b> certificates</span>
+  <span><b>0</b> missing runtimes</span><span><b>80</b> lookalike images</span>
+  <span><b>80</b> parody titles</span><span><b>190</b> parody names</span>
+</div>
+
+<h2>1 · Schema contract</h2>
+<p>Every field the exporter writes. Omitting one is undefined behaviour.</p>
+<table>
+<tr><th>Field</th><th>Value</th><th>Notes</th></tr>
+<tr><td>ID</td><td>generated</td><td>Safe range 9,000,000–9,999,999 — avoids all vanilla IDs</td></tr>
+<tr><td>ItemTyp</td><td>1</td><td>1 film · 2 series · 16+ show subtypes</td></tr>
+<tr><td>Name</td><td>English parody title</td><td>From <code>data/titles.csv</code> (column <code>en</code>), no accents, like the game's own. Also written to <code>Name_DE</code>. <code>Name_PTBR</code> gets the parody in the film's own language (Portuguese; French for <em>Le Soulier de Satin</em>, English for <em>Kiss Me</em>). <code>_FR _ES _RU _TU _HK _PL</code> are left empty for now, see §4. The real title stays in <code>_comment</code></td></tr>
+<tr><td>Desc</td><td>synopsis</td><td>Original one-liners, ≤15 words, not copied from any source</td></tr>
+<tr><td>Genre</td><td>game code</td><td><code>gcode</code> in the data. Also picks the image folder. See the genre table below</td></tr>
+<tr><td>Subgenre</td><td>game code</td><td><code>sgcode</code> in the data, omitted when <code>null</code>. Same codes as Genre, never equal to it</td></tr>
+<tr><td>Country</td><td>7</td><td><strong>Portugal.</strong> The game's list has 34 countries, codes 0–33</td></tr>
+<tr><td>Date</td><td>year</td><td>Portuguese theatrical release, not festival premiere</td></tr>
+<tr><td>Rating</td><td>0–100</td><td>Critical standing</td></tr>
+<tr><td>Potential</td><td>0–100</td><td>Audience draw — independent of Rating</td></tr>
+<tr><td>AgeRate</td><td>0/6/12/16/18</td><td>FSK scale. IGAC M/n maps 1:1; M/14 has no slot</td></tr>
+<tr><td>Blocks</td><td>2–4</td><td>≤120 min → 2 · 121–175 → 3 · &gt;175 → 4</td></tr>
+<tr><td>Approval</td><td>omit</td><td>The game round from which the film may appear (<code>CanApproval</code>: round ≥ Approval). Omitted = 0 = available from the start. 255 holds a film back until round 255</td></tr>
+<tr><td>Texture</td><td>1, 2, 3…</td><td>Image number inside the genre's folder: <code>SCRN/DRAMA/0079.png</code> → <code>Texture 79</code>. Assigned at install, see §5</td></tr>
+<tr><td>Chance</td><td>by Potential</td><td>A rarity, read from the vanilla films: the higher the Potential, the lower the Chance. Potential under 50 → 15, 50s → 8, 60s → 5, 70s → 3, 80+ → 1. The first version used Potential ÷ 4, which ran the wrong way</td></tr>
+<tr><td>Credits</td><td>"dir,  a1, a2, a3"</td><td>A string of 4 cast IDs, director first, e.g. <code>"2,  10005, 10006, 10007"</code>. Built from the names by <code>tools/build_cast.py</code></td></tr>
+<tr><td>IP</td><td>= ID</td><td>Franchise grouping. Vanilla films set it to their own ID unless they belong to a series of films</td></tr>
+<tr><td>Price</td><td>omit</td><td>Engine derives it; <code>baseVars</code> carries <code>moviePriceD0/D1/D2</code></td></tr>
+</table>
+
+<h3>Parody titles</h3>
+<p>Approved one by one with the mod's owner on 18 October 2026, using the game's tricks: an opposite, a shifted number, one changed
+letter or name, a near-synonym. The suggested title is in the film's own language; the English one is what the game shows as
+<code>Name</code>.</p>
+<details><summary>All 80 titles</summary>
+<div class="scroll">
+<table>
+<tr><th>#</th><th>Real title</th><th>Parody (own language)</th><th>English (<code>Name</code>)</th></tr>
+<tr><td class="num">01</td><td><em>Conversa Acabada</em> (1981)</td><td>Discussão Acabada</td><td>Argument Over</td></tr>
+<tr><td class="num">02</td><td><em>Francisca</em> (1981)</td><td>Francesca</td><td>Francesca</td></tr>
+<tr><td class="num">03</td><td><em>Kilas, o Mau da Fita</em> (1981)</td><td>Quilas, o Bom da Fita</td><td>Quilas, the Good Guy</td></tr>
+<tr><td class="num">04</td><td><em>A Ilha dos Amores</em> (1982)</td><td>A Ilha dos Namorados</td><td>The Island of Sweethearts</td></tr>
+<tr><td class="num">05</td><td><em>A Vida É Bela?!</em> (1982)</td><td>A Vida É ok?!</td><td>Life Is OK?!</td></tr>
+<tr><td class="num">06</td><td><em>Silvestre</em> (1982)</td><td>Silvério</td><td>Silverio</td></tr>
+<tr><td class="num">07</td><td><em>Crónica dos Bons Malandros</em> (1984)</td><td>Crónica dos Maus Malandros</td><td>Chronicle of the Bad Rascals</td></tr>
+<tr><td class="num">08</td><td><em>O Lugar do Morto</em> (1984)</td><td>O Lugar do Vivo</td><td>The Living Man&#x27;s Seat</td></tr>
+<tr><td class="num">09</td><td><em>Le Soulier de Satin</em> (1985)</td><td>Le Soulier de Soie</td><td>The Silk Slipper</td></tr>
+<tr><td class="num">10</td><td><em>Um Adeus Português</em> (1986)</td><td>Um Até Logo Português</td><td>A Portuguese See You Later</td></tr>
+<tr><td class="num">11</td><td><em>Uma Rapariga no Verão</em> (1986)</td><td>Uma Rapariga na Primavera</td><td>A Girl in Spring</td></tr>
+<tr><td class="num">12</td><td><em>Balada da Praia dos Cães</em> (1987)</td><td>Balada da Praia dos Gatos</td><td>Ballad of the Beach of Cats</td></tr>
+<tr><td class="num">13</td><td><em>O Bobo</em> (1987)</td><td>O Tolo</td><td>The Dunce</td></tr>
+<tr><td class="num">14</td><td><em>O Querido Lilás</em> (1987)</td><td>O Querido Violeta</td><td>Dear Violet</td></tr>
+<tr><td class="num">15</td><td><em>Os Canibais</em> (1988)</td><td>Os Antropófagos</td><td>The Man-Eaters</td></tr>
+<tr><td class="num">16</td><td><em>Tempos Difíceis</em> (1988)</td><td>Tempos Complicados</td><td>Complicated Times</td></tr>
+<tr><td class="num">17</td><td><em>O Sangue</em> (1989)</td><td>O Líquido das Veias</td><td>The Liquid in the Veins</td></tr>
+<tr><td class="num">18</td><td><em>Recordações da Casa Amarela</em> (1989)</td><td>Recordações da Casa Cor-de-Laranja</td><td>Memories of the Orange House</td></tr>
+<tr><td class="num">19</td><td><em>Non, ou a Vã Glória de Mandar</em> (1990)</td><td>Não, ou a Vã Glória de Obedecer</td><td>No, or the Vain Glory of Obeying</td></tr>
+<tr><td class="num">20</td><td><em>A Divina Comédia</em> (1991)</td><td>A Divina Tragédia</td><td>The Divine Tragedy</td></tr>
+<tr><td class="num">21</td><td><em>A Idade Maior</em> (1991)</td><td>A Idade Menor</td><td>The Age of Minority</td></tr>
+<tr><td class="num">22</td><td><em>O Último Mergulho</em> (1992)</td><td>O Primeiro Mergulho</td><td>The First Dive</td></tr>
+<tr><td class="num">23</td><td><em>Amor e Dedinhos de Pé</em> (1993)</td><td>Amor e Dedinhos da Mão</td><td>Love and Little Fingers</td></tr>
+<tr><td class="num">24</td><td><em>Vale Abraão</em> (1993)</td><td>Monte Abraão</td><td>Mount Abraham</td></tr>
+<tr><td class="num">25</td><td><em>Casa de Lava</em> (1994)</td><td>Casa de Basalto</td><td>Basalt House</td></tr>
+<tr><td class="num">26</td><td><em>Três Irmãos</em> (1994)</td><td>Quatro Irmãos</td><td>Four Siblings</td></tr>
+<tr><td class="num">27</td><td><em>A Comédia de Deus</em> (1995)</td><td>A Farsa de Deus</td><td>God&#x27;s Farce</td></tr>
+<tr><td class="num">28</td><td><em>Adão e Eva</em> (1995)</td><td>Eva e Adão</td><td>Eve and Adam</td></tr>
+<tr><td class="num">29</td><td><em>Corte de Cabelo</em> (1995)</td><td>O Cabelo</td><td>The Hair</td></tr>
+<tr><td class="num">30</td><td><em>O Convento</em> (1995)</td><td>O Mosteiro</td><td>The Monastery</td></tr>
+<tr><td class="num">31</td><td><em>Sinais de Fogo</em> (1995)</td><td>Sinais de Fumo</td><td>Signs of Smoke</td></tr>
+<tr><td class="num">32</td><td><em>Ossos</em> (1997)</td><td>Ossinhos</td><td>Little Bones</td></tr>
+<tr><td class="num">33</td><td><em>Tentação</em> (1997)</td><td>Doce Tentação</td><td>Sweet Temptation</td></tr>
+<tr><td class="num">34</td><td><em>Viagem ao Princípio do Mundo</em> (1997)</td><td>Viagem ao Fim do Mundo</td><td>Journey to the End of the World</td></tr>
+<tr><td class="num">35</td><td><em>Fintar o Destino</em> (1998)</td><td>Driblar o Destino</td><td>Dribbling Fate</td></tr>
+<tr><td class="num">36</td><td><em>Os Mutantes</em> (1998)</td><td>Os Mutados</td><td>The Mutated</td></tr>
+<tr><td class="num">37</td><td><em>Pesadelo Cor de Rosa</em> (1998)</td><td>Pesadelo Roxo</td><td>Purple Nightmare</td></tr>
+<tr><td class="num">38</td><td><em>Sapatos Pretos</em> (1998)</td><td>Sapatos Brancos</td><td>White Shoes</td></tr>
+<tr><td class="num">39</td><td><em>Zona J</em> (1998)</td><td>Zona K</td><td>Zone K</td></tr>
+<tr><td class="num">40</td><td><em>A Carta</em> (1999)</td><td>O Postal</td><td>The Postcard</td></tr>
+<tr><td class="num">41</td><td><em>As Bodas de Deus</em> (1999)</td><td>O Casamento de Deus</td><td>God&#x27;s Wedding</td></tr>
+<tr><td class="num">42</td><td><em>Inferno</em> (1999)</td><td>Purgatório</td><td>Purgatory</td></tr>
+<tr><td class="num">43</td><td><em>Jaime</em> (1999)</td><td>Jorge</td><td>Jorge</td></tr>
+<tr><td class="num">44</td><td><em>Branca de Neve</em> (2000)</td><td>Branca de Gelo</td><td>Ice White</td></tr>
+<tr><td class="num">45</td><td><em>Capitães de Abril</em> (2000)</td><td>Sargentos de Abril</td><td>Sergeants of April</td></tr>
+<tr><td class="num">46</td><td><em>No Quarto da Vanda</em> (2000)</td><td>No Quarto da Vanessa</td><td>In Vanessa&#x27;s Room</td></tr>
+<tr><td class="num">47</td><td><em>O Fantasma</em> (2000)</td><td>O Espectro</td><td>The Spectre</td></tr>
+<tr><td class="num">48</td><td><em>Palavra e Utopia</em> (2000)</td><td>Ideias Utópicas</td><td>Utopian Ideas</td></tr>
+<tr><td class="num">49</td><td><em>Peixe-Lua</em> (2000)</td><td>Peixe-Sol</td><td>Sunfish</td></tr>
+<tr><td class="num">50</td><td><em>A Raiz do Coração</em> (2001)</td><td>A Raiz do Amor</td><td>The Root of Love</td></tr>
+<tr><td class="num">51</td><td><em>Camarate</em> (2001)</td><td>4 de Dezembro de 1980</td><td>December 4th, 1980</td></tr>
+<tr><td class="num">52</td><td><em>Ganhar a Vida</em> (2001)</td><td>Merecer a Vida</td><td>Deserving a Living</td></tr>
+<tr><td class="num">53</td><td><em>Rasganço</em> (2001)</td><td>Rasgão</td><td>The Rip</td></tr>
+<tr><td class="num">54</td><td><em>Vou Para Casa</em> (2001)</td><td>Fico em Casa</td><td>Staying Home</td></tr>
+<tr><td class="num">55</td><td><em>Água e Sal</em> (2001)</td><td>Água e Pimenta</td><td>Water and Pepper</td></tr>
+<tr><td class="num">56</td><td><em>A Jangada de Pedra</em> (2002)</td><td>A Jangada de Betão</td><td>The Concrete Raft</td></tr>
+<tr><td class="num">57</td><td><em>A Selva</em> (2002)</td><td>A Floresta</td><td>The Forest</td></tr>
+<tr><td class="num">58</td><td><em>O Delfim</em> (2002)</td><td>O Golfinho</td><td>The Dolphin</td></tr>
+<tr><td class="num">59</td><td><em>O Princípio da Incerteza</em> (2002)</td><td>O Princípio da Certeza</td><td>The Certainty Principle</td></tr>
+<tr><td class="num">60</td><td><em>A Mulher Polícia</em> (2003)</td><td>A Pessoa Polícia</td><td>The Policeperson</td></tr>
+<tr><td class="num">61</td><td><em>Os Imortais</em> (2003)</td><td>Os Eternos</td><td>The Everlasting</td></tr>
+<tr><td class="num">62</td><td><em>Quaresma</em> (2003)</td><td>Jejum</td><td>Fasting</td></tr>
+<tr><td class="num">63</td><td><em>Um Filme Falado</em> (2003)</td><td>Um Filme Mudo</td><td>A Silent Film</td></tr>
+<tr><td class="num">64</td><td><em>Vai~e~Vem</em> (2003)</td><td>Ioiô</td><td>Yo-Yo</td></tr>
+<tr><td class="num">65</td><td><em>A Cara que Mereces</em> (2004)</td><td>A Cara que Tens</td><td>The Face You Have</td></tr>
+<tr><td class="num">66</td><td><em>A Costa dos Murmúrios</em> (2004)</td><td>A Costa dos Sussurros</td><td>The Coast of Whispers</td></tr>
+<tr><td class="num">67</td><td><em>André Valente</em> (2004)</td><td>André Corajoso</td><td>Brave Andre</td></tr>
+<tr><td class="num">68</td><td><em>Kiss Me</em> (2004)</td><td>Kiss Me Twice</td><td>Kiss Me Twice</td></tr>
+<tr><td class="num">69</td><td><em>Lá Fora</em> (2004)</td><td>Cá Dentro</td><td>In Here</td></tr>
+<tr><td class="num">70</td><td><em>Noite Escura</em> (2004)</td><td>Noite Clara</td><td>Bright Night</td></tr>
+<tr><td class="num">71</td><td><em>O Milagre Segundo Salomé</em> (2004)</td><td>O Milagre Segundo Salomão</td><td>The Miracle According to Solomon</td></tr>
+<tr><td class="num">72</td><td><em>O Quinto Império</em> (2004)</td><td>O Quinto Imperador</td><td>The Fifth Emperor</td></tr>
+<tr><td class="num">73</td><td><em>Portugal S.A.</em> (2004)</td><td>Portugal Lda.</td><td>Portugal Ltd.</td></tr>
+<tr><td class="num">74</td><td><em>Sorte Nula</em> (2004)</td><td>Sorte Pouca</td><td>Little Luck</td></tr>
+<tr><td class="num">75</td><td><em>Adriana</em> (2005)</td><td>Andreia</td><td>Andreia</td></tr>
+<tr><td class="num">76</td><td><em>Alice</em> (2005)</td><td>Alicia</td><td>Alicia</td></tr>
+<tr><td class="num">77</td><td><em>O Crime do Padre Amaro</em> (2005)</td><td>O Crime do Padre António</td><td>The Crime of Father Antonio</td></tr>
+<tr><td class="num">78</td><td><em>O Fatalista</em> (2005)</td><td>O Realista</td><td>The Realist</td></tr>
+<tr><td class="num">79</td><td><em>Odete</em> (2005)</td><td>Odília</td><td>Odilia</td></tr>
+<tr><td class="num">80</td><td><em>Um Tiro no Escuro</em> (2005)</td><td>Um Golpe no Escuro</td><td>A Blow in the Dark</td></tr>
+</table>
+</div>
+</details>
+
+<h3>Parody cast names</h3>
+<p>Like vanilla's "Stanley Kuprick" and "Katharine Hapburn": one or two letters changed, usually in the surname, accents kept. From
+<code>data/cast_names.csv</code>; the real name stays in <code>_comment</code>. People who both direct and act keep one parody; the
+Medeiros sisters and the Mastroiannis keep a shared surname. None matches a real name of ours or a vanilla cast name, and none of
+our people already exists in the vanilla cast.</p>
+<details><summary>All 190 people</summary>
+<div class="scroll">
+<table>
+<tr><th>Real name</th><th>Parody</th><th>Role</th></tr>
+<tr><td>António da Cunha Telles</td><td>António da Cunha Tellez</td><td>director</td></tr>
+<tr><td>António-Pedro Vasconcelos</td><td>António-Pedro Vasconselos</td><td>director</td></tr>
+<tr><td>Artur Semedo</td><td>Artur Semeda</td><td>actor + director</td></tr>
+<tr><td>Carlos Coelho da Silva</td><td>Carlos Coelho da Selva</td><td>director</td></tr>
+<tr><td>Catarina Ruivo</td><td>Catarina Ruiva</td><td>director</td></tr>
+<tr><td>Fernando Fragata</td><td>Fernando Fregata</td><td>director</td></tr>
+<tr><td>Fernando Lopes</td><td>Fernando Lupes</td><td>director</td></tr>
+<tr><td>Fernando Vendrell</td><td>Fernando Vendrel</td><td>director</td></tr>
+<tr><td>George Sluizer</td><td>George Sluyzer</td><td>director</td></tr>
+<tr><td>Joaquim Leitão</td><td>Joaquim Leirão</td><td>actor + director</td></tr>
+<tr><td>Joaquim Sapinho</td><td>Joaquim Sopinho</td><td>director</td></tr>
+<tr><td>José Fonseca e Costa</td><td>José Fonseca e Custa</td><td>director</td></tr>
+<tr><td>José Álvaro Morais</td><td>José Álvaro Moraes</td><td>director</td></tr>
+<tr><td>João Botelho</td><td>João Botilho</td><td>director</td></tr>
+<tr><td>João Canijo</td><td>João Canejo</td><td>director</td></tr>
+<tr><td>João César Monteiro</td><td>João César Monteira</td><td>director</td></tr>
+<tr><td>João Pedro Rodrigues</td><td>João Pedro Rodriguez</td><td>director</td></tr>
+<tr><td>Leonel Vieira</td><td>Leonel Vieyra</td><td>director</td></tr>
+<tr><td>Luís Filipe Rocha</td><td>Luís Filipe Rucha</td><td>director</td></tr>
+<tr><td>Luís Galvão Teles</td><td>Luís Galvão Tales</td><td>director</td></tr>
+<tr><td>Manoel de Oliveira</td><td>Manoel de Olivera</td><td>director</td></tr>
+<tr><td>Marco Martins</td><td>Marco Mertins</td><td>director</td></tr>
+<tr><td>Margarida Cardoso</td><td>Margarida Cardozo</td><td>director</td></tr>
+<tr><td>Margarida Gil</td><td>Margarida Gill</td><td>director</td></tr>
+<tr><td>Maria de Medeiros</td><td>Maria de Madeiros</td><td>actor + director</td></tr>
+<tr><td>Miguel Gomes</td><td>Miguel Gomez</td><td>director</td></tr>
+<tr><td>Mário Barroso</td><td>Mário Barrozo</td><td>actor + director</td></tr>
+<tr><td>Paulo Rocha</td><td>Paulo Rocca</td><td>director</td></tr>
+<tr><td>Pedro Costa</td><td>Pedro Kosta</td><td>director</td></tr>
+<tr><td>Raquel Freire</td><td>Raquel Freira</td><td>director</td></tr>
+<tr><td>Ruy Guerra</td><td>Ruy Guerro</td><td>director</td></tr>
+<tr><td>Teresa Villaverde</td><td>Teresa Villaverda</td><td>director</td></tr>
+<tr><td>Vítor Gonçalves</td><td>Vítor Gonçalvez</td><td>director</td></tr>
+<tr><td>Adriano Luz</td><td>Adriano Lux</td><td>actor</td></tr>
+<tr><td>Alexandra Lencastre</td><td>Alexandra Lancastre</td><td>actor</td></tr>
+<tr><td>Alexandre Pinto</td><td>Alexandre Pintu</td><td>actor</td></tr>
+<tr><td>Amélia Corôa</td><td>Amélia Corôna</td><td>actor</td></tr>
+<tr><td>Ana Bandeira</td><td>Ana Bandeiro</td><td>actor</td></tr>
+<tr><td>Ana Brandão</td><td>Ana Brendão</td><td>actor</td></tr>
+<tr><td>Ana Bustorff</td><td>Ana Bustorf</td><td>actor</td></tr>
+<tr><td>Ana Cristina de Oliveira</td><td>Ana Cristina de Oliviera</td><td>actor</td></tr>
+<tr><td>Ana Moreira</td><td>Ana Morera</td><td>actor</td></tr>
+<tr><td>Ana Nave</td><td>Ana Neve</td><td>actor</td></tr>
+<tr><td>Ana Teresa Carvalhosa</td><td>Ana Teresa Carvalhoza</td><td>actor</td></tr>
+<tr><td>Ana Torrent</td><td>Ana Torrant</td><td>actor</td></tr>
+<tr><td>Ana Zanatti</td><td>Ana Zanotti</td><td>actor</td></tr>
+<tr><td>André Barbosa</td><td>André Barboza</td><td>actor</td></tr>
+<tr><td>André Gomes</td><td>André Gommes</td><td>actor</td></tr>
+<tr><td>Anne Consigny</td><td>Anne Consigni</td><td>actor</td></tr>
+<tr><td>Antoine Chappey</td><td>Antoine Chappay</td><td>actor</td></tr>
+<tr><td>António Feio</td><td>António Feyo</td><td>actor</td></tr>
+<tr><td>Assumpta Serna</td><td>Assumpta Cerna</td><td>actor</td></tr>
+<tr><td>Beatriz Batarda</td><td>Beatriz Batarta</td><td>actor</td></tr>
+<tr><td>Beatriz Torcato</td><td>Beatriz Torcado</td><td>actor</td></tr>
+<tr><td>Betina Lopes</td><td>Betina Lopez</td><td>actor</td></tr>
+<tr><td>Bruno Bravo</td><td>Bruno Brava</td><td>actor</td></tr>
+<tr><td>Bruno Nogueira</td><td>Bruno Nogueiro</td><td>actor</td></tr>
+<tr><td>Canto e Castro</td><td>Canto e Crasto</td><td>actor</td></tr>
+<tr><td>Carla Bolito</td><td>Carla Bolita</td><td>actor</td></tr>
+<tr><td>Carlos Germano</td><td>Carlos Germino</td><td>actor</td></tr>
+<tr><td>Catarina Furtado</td><td>Catarina Furtada</td><td>actor</td></tr>
+<tr><td>Catherine Deneuve</td><td>Catherine Deneuvre</td><td>actor</td></tr>
+<tr><td>Chiara Mastroianni</td><td>Chiara Mastroiani</td><td>actor</td></tr>
+<tr><td>Chico Díaz</td><td>Chico Diez</td><td>actor</td></tr>
+<tr><td>Clara Joana</td><td>Clara Joanna</td><td>actor</td></tr>
+<tr><td>Cláudia Teixeira</td><td>Cláudia Teixera</td><td>actor</td></tr>
+<tr><td>Cristina Câmara</td><td>Cristina Câmera</td><td>actor</td></tr>
+<tr><td>Cécile Sanz de Alba</td><td>Cécile Sanz de Elba</td><td>actor</td></tr>
+<tr><td>Diogo Dória</td><td>Diogo Dório</td><td>actor</td></tr>
+<tr><td>Diogo Infante</td><td>Diogo Infanta</td><td>actor</td></tr>
+<tr><td>Diogo Morgado</td><td>Diogo Morgada</td><td>actor</td></tr>
+<tr><td>Dmitry Bogomolov</td><td>Dmitry Bogomalov</td><td>actor</td></tr>
+<tr><td>Edith Scob</td><td>Edith Scub</td><td>actor</td></tr>
+<tr><td>Emmanuelle Seigner</td><td>Emmanuelle Seignar</td><td>actor</td></tr>
+<tr><td>Eunice Muñoz</td><td>Eunice Muñez</td><td>actor</td></tr>
+<tr><td>Evgeniy Sidikhin</td><td>Evgeniy Sidikin</td><td>actor</td></tr>
+<tr><td>Fabienne Babe</td><td>Fabienne Bebe</td><td>actor</td></tr>
+<tr><td>Federico Luppi</td><td>Federico Lupi</td><td>actor</td></tr>
+<tr><td>Fernanda Borsatti</td><td>Fernanda Borsotti</td><td>actor</td></tr>
+<tr><td>Fernanda Serrano</td><td>Fernanda Serrana</td><td>actor</td></tr>
+<tr><td>Fernando Cabral Martins</td><td>Fernando Cobral Martins</td><td>actor</td></tr>
+<tr><td>Fernando Heitor</td><td>Fernando Heytor</td><td>actor</td></tr>
+<tr><td>Fernando Luís</td><td>Fernando Luiz</td><td>actor</td></tr>
+<tr><td>Filipa de Almeida</td><td>Filipa de Almeyda</td><td>actor</td></tr>
+<tr><td>Filipe Cary</td><td>Filipe Carey</td><td>actor</td></tr>
+<tr><td>Filipe Duarte</td><td>Filipe Duarta</td><td>actor</td></tr>
+<tr><td>Filipe Ferrer</td><td>Filipe Ferrar</td><td>actor</td></tr>
+<tr><td>Francesca Prandi</td><td>Francesca Brandi</td><td>actor</td></tr>
+<tr><td>Francisco Nascimento</td><td>Francisco Nascimonto</td><td>actor</td></tr>
+<tr><td>Frédéric Pierrot</td><td>Frédéric Pierrat</td><td>actor</td></tr>
+<tr><td>Félix Fontoura</td><td>Félix Fantoura</td><td>actor</td></tr>
+<tr><td>Gabino Diego</td><td>Gabino Diago</td><td>actor</td></tr>
+<tr><td>Galatea Ranzi</td><td>Galatea Ranzo</td><td>actor</td></tr>
+<tr><td>George Felner</td><td>George Fellner</td><td>actor</td></tr>
+<tr><td>Glória de Matos</td><td>Glória de Motos</td><td>actor</td></tr>
+<tr><td>Gracinda Nave</td><td>Gracinda Nava</td><td>actor</td></tr>
+<tr><td>Henrique Viana</td><td>Henrique Vianna</td><td>actor</td></tr>
+<tr><td>Herman José</td><td>Herman Josué</td><td>actor</td></tr>
+<tr><td>Icíar Bollaín</td><td>Icíar Bollaím</td><td>actor</td></tr>
+<tr><td>Inês de Medeiros</td><td>Inês de Madeiros</td><td>actor</td></tr>
+<tr><td>Isaach De Bankolé</td><td>Isaach De Bankolá</td><td>actor</td></tr>
+<tr><td>Isabel Galhardo</td><td>Isabel Galhardu</td><td>actor</td></tr>
+<tr><td>Isabel Ruth</td><td>Isabel Rute</td><td>actor</td></tr>
+<tr><td>Isabel de Castro</td><td>Isabel de Crasto</td><td>actor</td></tr>
+<tr><td>Jean-Pierre Cassel</td><td>Jean-Pierre Cassal</td><td>actor</td></tr>
+<tr><td>Jean-Yves Gautier</td><td>Jean-Yves Gauthiar</td><td>actor</td></tr>
+<tr><td>Joana Azevedo</td><td>Joana Azevedu</td><td>actor</td></tr>
+<tr><td>Joana Bárcia</td><td>Joana Bárcio</td><td>actor</td></tr>
+<tr><td>Joaquim de Almeida</td><td>Joaquim de Almieda</td><td>actor</td></tr>
+<tr><td>Joaquina Chicau</td><td>Joaquina Chicão</td><td>actor</td></tr>
+<tr><td>John Malkovich</td><td>John Malkovitch</td><td>actor</td></tr>
+<tr><td>Jorge Corrula</td><td>Jorge Curula</td><td>actor</td></tr>
+<tr><td>José Airosa</td><td>José Airoza</td><td>actor</td></tr>
+<tr><td>João Carreira</td><td>João Carreiro</td><td>actor</td></tr>
+<tr><td>João Perry</td><td>João Parry</td><td>actor</td></tr>
+<tr><td>João Reis</td><td>João Reiz</td><td>actor</td></tr>
+<tr><td>Juliet Berto</td><td>Juliet Berta</td><td>actor</td></tr>
+<tr><td>Júlia Britton</td><td>Júlia Brittan</td><td>actor</td></tr>
+<tr><td>Karra Elejalde</td><td>Karra Elejalda</td><td>actor</td></tr>
+<tr><td>Lena Duarte</td><td>Lena Doarte</td><td>actor</td></tr>
+<tr><td>Leonardo Viveiros</td><td>Leonardo Viveiras</td><td>actor</td></tr>
+<tr><td>Leonor Baldaque</td><td>Leonor Baldoque</td><td>actor</td></tr>
+<tr><td>Leonor Silveira</td><td>Leonor Silveiro</td><td>actor</td></tr>
+<tr><td>Lia Gama</td><td>Lia Gamma</td><td>actor</td></tr>
+<tr><td>Lima Duarte</td><td>Lima Duartte</td><td>actor</td></tr>
+<tr><td>Luís Lucas</td><td>Luís Lukas</td><td>actor</td></tr>
+<tr><td>Luís Miguel Cintra</td><td>Luís Miguel Sintra</td><td>actor</td></tr>
+<tr><td>Maitê Proença</td><td>Maitê Proenço</td><td>actor</td></tr>
+<tr><td>Manuel Gomes Miranda</td><td>Manuel Gomes Moranda</td><td>actor</td></tr>
+<tr><td>Manuel Wiborg</td><td>Manuel Wiburg</td><td>actor</td></tr>
+<tr><td>Manuela de Freitas</td><td>Manuela de Freytas</td><td>actor</td></tr>
+<tr><td>Marcantonio Del Carlo</td><td>Marcantonio Del Carla</td><td>actor</td></tr>
+<tr><td>Marcello Mastroianni</td><td>Marcello Mastroiani</td><td>actor</td></tr>
+<tr><td>Marcello Urgeghe</td><td>Marcello Urgheghe</td><td>actor</td></tr>
+<tr><td>Marco Delgado</td><td>Marco Delgada</td><td>actor</td></tr>
+<tr><td>Maria Cabral</td><td>Maria Cabrel</td><td>actor</td></tr>
+<tr><td>Maria João Abreu</td><td>Maria João Abrel</td><td>actor</td></tr>
+<tr><td>Maria João Luís</td><td>Maria João Luiz</td><td>actor</td></tr>
+<tr><td>Maria do Carmo Rôlo</td><td>Maria do Carmo Rôlho</td><td>actor</td></tr>
+<tr><td>Marisa Cruz</td><td>Marisa Kruz</td><td>actor</td></tr>
+<tr><td>Mariya Lipkina</td><td>Mariya Lipkona</td><td>actor</td></tr>
+<tr><td>Michel Piccoli</td><td>Michel Piccolo</td><td>actor</td></tr>
+<tr><td>Miguel Guilherme</td><td>Miguel Guilhermo</td><td>actor</td></tr>
+<tr><td>Milton Spencer</td><td>Milton Spenser</td><td>actor</td></tr>
+<tr><td>Milú</td><td>Miló</td><td>actor</td></tr>
+<tr><td>Mário Viegas</td><td>Mário Vegas</td><td>actor</td></tr>
+<tr><td>Mónica Calle</td><td>Mónica Kalle</td><td>actor</td></tr>
+<tr><td>Nelson Varela</td><td>Nelson Varella</td><td>actor</td></tr>
+<tr><td>Nicolau Breyner</td><td>Nicolau Breiner</td><td>actor</td></tr>
+<tr><td>Nuno Ferreira</td><td>Nuno Ferrera</td><td>actor</td></tr>
+<tr><td>Nuno Gil</td><td>Nuno Gal</td><td>actor</td></tr>
+<tr><td>Nuno Lopes</td><td>Nuno Lopis</td><td>actor</td></tr>
+<tr><td>Nuno Vaz</td><td>Nuno Vas</td><td>actor</td></tr>
+<tr><td>Nuria Madruga</td><td>Nuria Madruca</td><td>actor</td></tr>
+<tr><td>Patricia Barzyk</td><td>Patricia Barzik</td><td>actor</td></tr>
+<tr><td>Patrick Bauchau</td><td>Patrick Bouchau</td><td>actor</td></tr>
+<tr><td>Paula Guedes</td><td>Paula Guedez</td><td>actor</td></tr>
+<tr><td>Paulo Miranda</td><td>Paulo Mirando</td><td>actor</td></tr>
+<tr><td>Pedro Abrunhosa</td><td>Pedro Abrunhoza</td><td>actor</td></tr>
+<tr><td>Pedro Hestnes</td><td>Pedro Hestness</td><td>actor</td></tr>
+<tr><td>Pedro Oliveira</td><td>Pedro Olivera</td><td>actor</td></tr>
+<tr><td>Raquel Ascensão</td><td>Rakel Ascensão</td><td>actor</td></tr>
+<tr><td>Raul Solnado</td><td>Raul Solnada</td><td>actor</td></tr>
+<tr><td>Reginaldo da Cruz</td><td>Reginaldo da Crus</td><td>actor</td></tr>
+<tr><td>Ricardo Aibéo</td><td>Ricardo Aibéu</td><td>actor</td></tr>
+<tr><td>Ricardo Colares</td><td>Ricardo Collares</td><td>actor</td></tr>
+<tr><td>Ricardo Meneses</td><td>Ricardo Menezes</td><td>actor</td></tr>
+<tr><td>Ricardo Pereira</td><td>Ricardo Pereyra</td><td>actor</td></tr>
+<tr><td>Ricardo Trêpa</td><td>Ricardo Trêppa</td><td>actor</td></tr>
+<tr><td>Rita Blanco</td><td>Rita Blanca</td><td>actor</td></tr>
+<tr><td>Rita Durão</td><td>Rita Durán</td><td>actor</td></tr>
+<tr><td>Rita Pereira Marques</td><td>Rita Pereira Marquez</td><td>actor</td></tr>
+<tr><td>Rita Ribeiro</td><td>Rita Ribeira</td><td>actor</td></tr>
+<tr><td>Rogério Samora</td><td>Rogério Zamora</td><td>actor</td></tr>
+<tr><td>Rui Morisson</td><td>Rui Morison</td><td>actor</td></tr>
+<tr><td>Rui Unas</td><td>Rui Unhas</td><td>actor</td></tr>
+<tr><td>Ruth Gabriel</td><td>Ruth Gabriela</td><td>actor</td></tr>
+<tr><td>Ruy Furtado</td><td>Ruy Fortado</td><td>actor</td></tr>
+<tr><td>Sara Graça</td><td>Sara Graço</td><td>actor</td></tr>
+<tr><td>Saúl Fonseca</td><td>Saúl Fonsica</td><td>actor</td></tr>
+<tr><td>Soraia Chaves</td><td>Soraia Chavez</td><td>actor</td></tr>
+<tr><td>Stefano Accorsi</td><td>Stefano Acorsi</td><td>actor</td></tr>
+<tr><td>Teresa Madruga</td><td>Teresa Madrugo</td><td>actor</td></tr>
+<tr><td>Teresa Menezes</td><td>Teresa Menezis</td><td>actor</td></tr>
+<tr><td>Teresa Roby</td><td>Teresa Robby</td><td>actor</td></tr>
+<tr><td>Vanda Duarte</td><td>Vanda Darte</td><td>actor</td></tr>
+<tr><td>Vanessa Machado</td><td>Vanessa Machadinha</td><td>actor</td></tr>
+<tr><td>Virgílio Castelo</td><td>Virgílio Costelo</td><td>actor</td></tr>
+<tr><td>Vítor Norte</td><td>Vítor Narte</td><td>actor</td></tr>
+<tr><td>Zita Duarte</td><td>Zita Darte</td><td>actor</td></tr>
+</table>
+</div>
+</details>
+
+<h3>Genres</h3>
+<p>Every film was matched by hand against the game's 18 film genres, using TMDB and Wikidata genre tags as evidence.
+Both sources call most of these films "drama", so the final call is editorial. 22 films were checked one by one with
+the mod's owner (<code>src.genre: owner</code>); the rest are reviewed proposals (<code>review</code>). 51 films carry a subgenre.</p>
+<div class="scroll">
+<table>
+<tr><th>Genre</th><th>Code</th><th>Image folder</th><th>Main</th><th>Sub</th><th>Vanilla images</th></tr>
+<tr><td>Action</td><td class="num">0</td><td><code>ACTION</code></td><td class="num">–</td><td class="num">1</td><td class="num">86</td></tr>
+<tr><td>Drama</td><td class="num">1</td><td><code>DRAMA</code></td><td class="num">47</td><td class="num">13</td><td class="num">78</td></tr>
+<tr><td>Sci-fi</td><td class="num">2</td><td><code>SCIFI</code></td><td class="num">–</td><td class="num">1</td><td class="num">102</td></tr>
+<tr><td>Romantic</td><td class="num">3</td><td><code>ROMANTIC</code></td><td class="num">4</td><td class="num">7</td><td class="num">16</td></tr>
+<tr><td>Fantasy</td><td class="num">4</td><td><code>FANTASY</code></td><td class="num">2</td><td class="num">3</td><td class="num">23</td></tr>
+<tr><td>Crime</td><td class="num">5</td><td><code>CRIME</code></td><td class="num">5</td><td class="num">5</td><td class="num">25</td></tr>
+<tr><td>Thriller</td><td class="num">6</td><td><code>THRILLER</code></td><td class="num">2</td><td class="num">3</td><td class="num">40</td></tr>
+<tr><td>Horror</td><td class="num">7</td><td><code>HORROR</code></td><td class="num">–</td><td class="num">–</td><td class="num">44</td></tr>
+<tr><td>Mystery</td><td class="num">8</td><td><code>MYSTERY</code></td><td class="num">3</td><td class="num">4</td><td class="num">11</td></tr>
+<tr><td>Adventure</td><td class="num">9</td><td><code>ADVENTURE</code></td><td class="num">1</td><td class="num">–</td><td class="num">45</td></tr>
+<tr><td>Family</td><td class="num">10</td><td><code>FAMILY</code></td><td class="num">–</td><td class="num">–</td><td class="num">81</td></tr>
+<tr><td>Documentary</td><td class="num">11</td><td><code>DOCU</code></td><td class="num">1</td><td class="num">–</td><td class="num">34</td></tr>
+<tr><td>Antiwar</td><td class="num">14</td><td><code>ANTIWAR</code></td><td class="num">3</td><td class="num">1</td><td class="num">13</td></tr>
+<tr><td>Western</td><td class="num">15</td><td><code>WESTERN</code></td><td class="num">–</td><td class="num">–</td><td class="num">15</td></tr>
+<tr><td>Comedy</td><td class="num">16</td><td><code>COMEDY</code></td><td class="num">9</td><td class="num">2</td><td class="num">73</td></tr>
+<tr><td>Cartoon</td><td class="num">27</td><td><code>CARTOON</code></td><td class="num">–</td><td class="num">–</td><td class="num">29</td></tr>
+<tr><td>Erotic</td><td class="num">28</td><td><code>EROTIC</code></td><td class="num">–</td><td class="num">1</td><td class="num">12</td></tr>
+<tr><td>Historical</td><td class="num">29</td><td><code>HISTORICAL</code></td><td class="num">3</td><td class="num">10</td><td class="num">19</td></tr>
+</table>
+</div>
+<ul>
+<li>The first version of this page used codes the game reads as other genres (13 is a game-show genre, 14 is Antiwar). The game's own
+films are the source for the codes above.</li>
+<li>Codes 12–13 and 17–26 are TV formats (quiz, reality, dating, cooking, game show, sport, talk show, news, music, talent) and are not used for films.</li>
+<li>There is no Musical genre for films. The opera films go under their story: <em>Os Canibais</em> is Fantasy / Historical,
+<em>A Raiz do Coração</em> is Drama.</li>
+<li>Erotic (28) appears in vanilla only as a subgenre, on the three <em>Fifty Shades</em> films. <em>O Fantasma</em> follows that pattern: Drama / Erotic.</li>
+</ul>
+<h3>Main-genre changes from the first version</h3>
+<div class="scroll">
+<table>
+<tr><th>Film</th><th>Was</th><th>Now</th><th>Checked</th></tr>
+<tr><td><em>A Vida É Bela?!</em> (1982)</td><td>Crime</td><td>Comedy</td><td>owner</td></tr>
+<tr><td><em>Silvestre</em> (1982)</td><td>Fantasy</td><td>Drama / Fantasy</td><td>owner</td></tr>
+<tr><td><em>Le Soulier de Satin</em> (1985)</td><td>Drama</td><td>Historical / Romantic</td><td>owner</td></tr>
+<tr><td><em>Os Canibais</em> (1988)</td><td>Horror</td><td>Fantasy / Historical</td><td>owner</td></tr>
+<tr><td><em>Vale Abraão</em> (1993)</td><td>Romance</td><td>Drama / Romantic</td><td>owner</td></tr>
+<tr><td><em>Adão e Eva</em> (1995)</td><td>Comedy</td><td>Drama</td><td>owner</td></tr>
+<tr><td><em>Inferno</em> (1999)</td><td>Thriller</td><td>Drama</td><td>owner</td></tr>
+<tr><td><em>Capitães de Abril</em> (2000)</td><td>Antiwar</td><td>Drama / Historical</td><td>owner</td></tr>
+<tr><td><em>Palavra e Utopia</em> (2000)</td><td>Drama</td><td>Historical / Drama</td><td>owner</td></tr>
+<tr><td><em>A Raiz do Coração</em> (2001)</td><td>Fantasy</td><td>Drama</td><td>owner</td></tr>
+<tr><td><em>Camarate</em> (2001)</td><td>Mystery</td><td>Drama / Historical</td><td>owner</td></tr>
+<tr><td><em>O Milagre Segundo Salomé</em> (2004)</td><td>Drama</td><td>Romantic / Drama</td><td>owner</td></tr>
+<tr><td><em>O Quinto Império</em> (2004)</td><td>Drama</td><td>Historical / Drama</td><td>owner</td></tr>
+<tr><td><em>Portugal S.A.</em> (2004)</td><td>Comedy</td><td>Thriller / Drama</td><td>owner</td></tr>
+<tr><td><em>Sorte Nula</em> (2004)</td><td>Comedy</td><td>Mystery / Crime</td><td>owner</td></tr>
+</table>
+</div>
+
+<h2>2 · Constraints — verified vs assumed</h2>
+<p>The first version leaned on the community Mod Creator, a fan tool. Everything below has since been checked
+against the installed game: its database files (694 vanilla films, 2,773 cast entries) and its packed data,
+unpacked with <a href="https://github.com/trumank/repak">repak</a>.</p>
+<h3><span class="flag v">Verified</span> against the game files</h3>
+<ul>
+<li><code>Blocks</code> for films is <strong>2–4</strong>, never 1 (582 films at 2, 107 at 3, 5 at 4). The Mod Creator offers 1–3 and is wrong.</li>
+<li><code>Credits</code> holds exactly 4 IDs on all 694 vanilla films: the director, then three actors.</li>
+<li>Series run 1 block (274 of 277), occasionally 2.</li>
+<li><code>AgeRate</code> uses only 0/6/12/16/18.</li>
+<li><code>Country</code> has 34 values, 0 USA to 33 Yugoslavia. <strong>Portugal is 7.</strong> The list was read
+from the game's film-details code, and every country code used by a vanilla film matches it.
+The Mod Creator's six-value list was wrong.</li>
+<li>Film images are 640×480 PNG, named <code>0001.png</code> upward inside a folder per genre.</li>
+<li>Mod files <strong>replace</strong> the game's database. The loader reads <code>DATABASE/MOD/ItemsData.json</code> and only falls
+back to <code>DATABASE/ItemsData.json</code> when the mod file fails to load. Cast loads the same way. An earlier version of this page said
+"add"; installing only our 80 films froze a new game. The installer therefore merges the install's current vanilla files with ours.</li>
+<li><strong>Duplicate IDs are not caught.</strong> <code>Check Exist Item ID</code> and <code>Check Exist Cast ID</code> are stubs that always
+return false. The 9,000,000–9,999,999 range is free in both files.</li>
+<li>Images: for N = 1…9999 the game tries <code>000N.png</code>, <code>00N.png</code>, <code>0N.png</code>, <code>N.png</code> and
+<strong>stops at the first number with none</strong>, so a gap cuts off everything after it. Slot 0 is a test card, so
+<code>Texture N</code> = file N. Vanilla DRAMA has an unpadded <code>41.png</code>, which loads fine.</li>
+<li>The dealer restocks from the database loaded at start-up, so the mod also works with existing save games. Each film rolls against
+<code>Chance</code>; films owned, for sale or for rent are skipped.</li>
+<li>With the <em>no modern movies</em> setting on, films from 2000 or later are skipped (37 of ours) and films after 1996 count as premium.</li>
+<li><strong>Prefixed mod files are not loaded.</strong> The community Mod Creator exports <code>MOD/&lt;modname&gt;_items.json</code> and
+<code>_cast.json</code> and calls that native multi-mod support. Tested on 18 October 2026: none of our films appeared in two new games.
+The loader (15 October build) has no folder listing at all, only fixed file names; a <code>DATABASE/MODS/</code> folder exists but only
+for review texts. So one content mod owns <code>MOD/ItemsData.json</code> at a time.</li>
+<li><code>Disabled</code> cast are still credited on films: 277 of the 279 disabled vanilla people (Hitchkock, Kuprick…) appear in film
+credits. All 194 of ours are disabled.</li>
+<li><code>Premium</code> films are sold only at the premium dealer. The 65 vanilla ones are recent releases (2003–2025, median 2023).</li>
+<li>Cast <code>Rating</code> only matters for the player's own productions (salary, cast review). Licensed films use cast IDs only, for the
+schedule combination bonus: neighbouring films with the same franchise, genre, lead actor or director.</li>
+</ul>
+<h3><span class="flag u">Unconfirmed</span></h3>
+<ul>
+<li><code>Disabled</code> keeps a person out of the film studio's hiring pool. It fits vanilla (dead directors can't be hired) but
+hasn't been seen in game.</li>
+<li><code>Chance</code> works as a weight for how often a film is offered. Ours follow the vanilla rule, so they appear in proportion:
+about 1 in 15 offers in 1995, 1 in 8 by 2005.</li>
+<li>The film card shows Potential at about 0.7× the data value (94 → 6.6, 39 → 2.7, 7 → 0.5). Probably an age or time factor the
+game applies to every film.</li>
+</ul>
+
+<h2>3 · Provenance</h2>
+<p>Each row carries a <code>src</code> object recording where its soft fields came from. Nothing in the
+dataset is a silent guess.</p>
+<table>
+<tr><th>Key</th><th>Values</th><th>Meaning</th></tr>
+<tr><td>src.rating</td><td>awards · estimate</td><td>51 computed from award pedigree; 29 editorial</td></tr>
+<tr><td>src.potential</td><td>admissions · estimate · user</td><td>35 fitted to ticket sales; 44 rescaled estimates; 1 set by the owner (<em>Branca de Neve</em>, 7)</td></tr>
+<tr><td>src.cert</td><td>listing · user · judgement</td><td>Cinecartaz/CinePT/TVCine · supplied directly · 1 unresolved</td></tr>
+<tr><td>src.runtime</td><td>listing · user</td><td>Mirrors (Letterboxd/TMDB/Wikipedia) · supplied directly</td></tr>
+<tr><td>src.cast</td><td>imdb · mirror</td><td>Read from IMDb · from mirrors where IMDb was blocked</td></tr>
+<tr><td>src.year</td><td>ok · contested</td><td>2 films still disputed: <em>O Sangue</em>, <em>Fintar o Destino</em></td></tr>
+<tr><td>src.genre</td><td>owner · review</td><td>22 checked one by one with the mod's owner · 58 reviewed proposals</td></tr>
+</table>
+<h3>How the two scored fields were derived</h3>
+<p><strong>Potential</strong> — log fit across observed admissions, from <em>O Bobo</em> (678 tickets) to
+<em>O Crime do Padre Amaro</em> (380,671):
+<code>3 + 92 × (log10(adm) − log10(678)) ÷ (log10(380671) − log10(678))</code>. Log rather than linear
+because television flattens the distribution. The 45 without a figure were rescaled onto the same axis
+by regression on the anchors — those add no information beyond their relative order.</p>
+<p><strong>Rating</strong> — <code>60 + 0.5 × (tier of highest award) + 0.15 × (total award points)</code>.
+Base 60 so awards lift rather than define. Read it as award pedigree, not quality: <em>Vale Abraão</em>
+computes to 69 on two modest festival prizes and is widely held to be among the finest Portuguese films
+ever made. No award formula can see that.</p>
+
+<h2>4 · Open work</h2>
+<ul>
+<li><strong>Mod pages.</strong> ModDB as the main page, Nexus as a second upload of the same zip. Text to write: pitch, film list,
+install/update/uninstall, the Unblock tip, conflicts, AI disclosure, ID range. Screenshots from the owner.</li>
+<li><strong>Languages, after publishing.</strong> <code>Name_PTBR</code> has the Portuguese parodies; ES, FR, HK, PL, RU and TU are empty, and every
+language shows the English synopsis (<code>Desc_PTBR</code> is empty). Full translations are planned for after the first release.</li>
+<li><strong>Data still to check:</strong> 58 genres are reviewed proposals; 2 years are disputed (<em>O Sangue</em>, <em>Fintar o Destino</em>);
+45 Potential values are estimates.</li>
+<li><strong><em>A Vida É Bela?!</em> has no certificate</strong> on any listing. Sitting at 12 as judgement.</li>
+<li><strong>Five films carry IGAC M/14</strong>, which has no slot in the game: <em>O Sangue</em>, <em>Non</em>, <em>Casa de Lava</em>,
+<em>Sinais de Fogo</em>, <em>Pesadelo Cor de Rosa</em>. All mapped up to 16. A decision, not a fact.</li>
+</ul>
+<h3>Done since 5 October</h3>
+<ul>
+<li><strong>Images.</strong> All 80 are made-up black-and-white lookalikes, generated from written scene prompts
+(<code>data/image_prompts.csv</code>, <code>stills/generated/</code>). <code>convert_stills.py</code> forces greyscale and crops to 4:3.</li>
+<li><strong>Titles and names</strong> are parodies (§1).</li>
+<li><strong>Premium flag</strong> removed from the 7 festival films: the mod has none (owner's decision, 18 October).</li>
+<li><strong><em>Inferno</em> (1999) synopsis</strong> verified: ten Angola war veterans at their yearly dinner. Old sources had mixed it up with
+<em>Os Imortais</em>, which has a similar premise.</li>
+<li><strong>All cast disabled</strong>, so our people stay out of the studio hiring pool and their estimated ratings don't matter.</li>
+</ul>
+
+<h2>5 · Build and install</h2>
+<p>Built and tested in game; last full test 19 October 2026. Everything lives in the project folder; <code>README.md</code> there has the commands.
+Film data changes go in <code>data/data_overrides.json</code>, because <code>tools/apply_genres.py</code> regenerates <code>films.json</code>.</p>
+<ol class="steps">
+<li><strong>Cast.</strong> <code>tools/build_cast.py</code> → <code>build/CastData.json</code>: 194 entries for 190 people
+(four both direct and act), IDs 9,000,001–9,000,194, parody names from <code>data/cast_names.csv</code>, all <code>Disabled</code>.</li>
+<li><strong>Films.</strong> <code>tools/build_items.py</code> → <code>build/ItemsData.json</code>: 80 films, IDs 9,000,001–9,000,080, titles from
+<code>data/titles.csv</code>, no Premium flags.</li>
+<li><strong>Images.</strong> <code>tools/convert_stills.py</code> → <code>stills/png/&lt;id&gt;.png</code>: the generated lookalike, greyscale, 640×480 RGBA.
+<code>_compare.jpg</code> shows each old TMDB still beside its replacement.</li>
+<li><strong>Install (development).</strong> <code>tools/install_mod.py</code> merges the install's vanilla <code>ItemsData.json</code> and
+<code>CastData.json</code> with ours into <code>DATABASE/MOD/</code>, numbers our images after the vanilla ones in each genre folder, and
+writes the real <code>Texture</code> values. It keeps a record of every file it wrote, with fingerprints, in <code>DATABASE/MOD/</code> and in
+the project, so <code>--uninstall</code> removes exactly what it added. Re-run after every game update.</li>
+<li><strong>Player package.</strong> <code>tools/package.py --version 1.0</code> → <code>build/PacotePortugues-1.0.zip</code> (24 MB): our data and
+images only, no game data, plus <code>Install.bat</code>/<code>Uninstall.bat</code> and <code>install.ps1</code> from <code>tools/windows/</code>.
+<code>install.ps1</code> runs on Windows PowerShell 5.1 with nothing else installed. It finds the game through Steam (any library folder),
+then does what <code>install_mod.py</code> does with the same safety checks and the same install record, so either one can remove the
+other's install. It merges by inserting our entries' text before the game file's final <code>]</code>, so the game's own text is kept byte for
+byte.</li>
+<li><strong>Tested in game.</strong> 5 October: films at the regular, rental and pirate dealers and with computer opponents. 18 October: parody
+titles, cast and lookalike images on a film card (<em>The Hair</em>). 19 October, with the zip on Windows: <code>Uninstall.bat</code> removed the
+earlier install cleanly, <code>Install.bat</code> put it back, and a new game offered <em>December 4th, 1980</em> as a pirated copy. Windows shows
+an "Unknown Publisher" prompt for the <code>.bat</code> (batch files can't be signed); the player README explains it and the Unblock tip.</li>
+</ol>
+
+<h2>6 · Distribution</h2>
+<p class="note"><strong>Now in the game's own style.</strong> Titles and names are parodies, as the game does for its films, and the pictures
+are made-up lookalikes, not film stills. The synopses are original one-liners. What remains recognisable is what the game itself
+leaves recognisable: the parodies point at real films and people. On Nexus the pictures need the <em>AI-Generated Content</em> tag;
+ModDB's rules couldn't be checked. The zip carries no game data. It can't be combined with other content mods that write
+<code>MOD/ItemsData.json</code> (<em>Real Names</em>, the Polish database), and the mod pages should say so.</p>
+
+<h2>7 · The dataset</h2>
+<div class="data">
+  <div class="data-head">
+    <span id="meta">80 films · JSON</span>
+    <button id="copy" type="button">Copy JSON</button>
+    <button id="toggle" type="button" class="ghost">Expand</button>
+  </div>
+  <pre id="json"></pre>
+</div>
+
+<footer>
+<p>Sources: IMDb (titles, tt IDs, years; cast where reachable) · Portuguese and English Wikipedia
+(awards, admissions) · ICA Instituto do Cinema e Audiovisual (box office 2004+) · Cinecartaz, CinePT
+(Universidade da Beira Interior) and TVCine (certificates) · a curated IMDb ranking of the most-watched
+Portuguese films (seven admissions figures).</p>
+<p>Schema first read from the community Mod Creator source and Steam modding guides, then checked against
+the installed game's <code>EXTERN</code> files and packed data (5 October 2026, loader re-read after the 15 October update), as §2 records.
+Parody titles and names approved by the mod's owner, 18 October 2026.</p>
+</footer>
+</div>
+
+<script>
+const DATA = [{"pt":"Conversa Acabada","en":"Conversa Acabada (no English AKA)","tt":"tt0080563","year":1981,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":100,"blocks":2,"age":12,"cert":"M/12","rating":80,"pot":32,"adm":null,"chance":15.0,"credits":["João Botelho","Fernando Cabral Martins","André Gomes","Juliet Berto"],"desc":"The friendship and correspondence of poets Fernando Pessoa and Mário de Sá-Carneiro.","flags":["Cult"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Francisca","en":"Francisca (PT title is IMDb primary)","tt":"tt0082408","year":1981,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":166,"blocks":3,"age":12,"cert":"M/12","rating":88,"pot":30,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Teresa Menezes","Diogo Dória","Mário Barroso"],"desc":"A doomed 19th-century love triangle between two friends and one woman.","flags":["Timeless"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Kilas, o Mau da Fita","en":"Kilas, o Mau da Fita (no English AKA)","tt":"tt0080998","year":1981,"genre":"Comedy","gcode":16,"subgenre":"Crime","sgcode":5,"rt":124,"blocks":3,"age":12,"cert":"M/12","rating":70,"pot":78,"adm":121000,"chance":3.0,"credits":["José Fonseca e Costa","Mário Viegas","Lia Gama","Milú"],"desc":"Satirical comedy mocking Portuguese society through a hapless would-be tough guy.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Ilha dos Amores","en":"The Island of Love","tt":"tt0077722","year":1982,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":170,"blocks":3,"age":12,"cert":"M/12","rating":66,"pot":28,"adm":null,"chance":15.0,"credits":["Paulo Rocha","Luís Miguel Cintra","Clara Joana","Zita Duarte"],"desc":"Writer Wenceslau de Moraes lives and loves in Macau and Japan.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Vida É Bela?!","en":"A Vida É Bela?! (no English AKA)","tt":"tt0081717","year":1982,"genre":"Comedy","gcode":16,"subgenre":null,"sgcode":null,"rt":98,"blocks":2,"age":12,"cert":"M/12","rating":58,"pot":80,"adm":140000,"chance":1.0,"credits":["Luís Galvão Teles","Nicolau Breyner","Fernanda Borsatti","Henrique Viana"],"desc":"A swindler exiled for his schemes returns to 1935 Lisbon and starts again.","flags":["Evergreen"],"src":{"rating":"estimate","potential":"admissions","cert":"judgement","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Silvestre","en":"Silvestre","tt":"tt0083082","year":1982,"genre":"Drama","gcode":1,"subgenre":"Fantasy","sgcode":4,"rt":113,"blocks":2,"age":12,"cert":"M/12","rating":66,"pot":42,"adm":9950,"chance":15.0,"credits":["João César Monteiro","Maria de Medeiros","Luís Miguel Cintra","Teresa Madruga"],"desc":"A woman disguises herself as a knight to save her father.","flags":["Cult"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Crónica dos Bons Malandros","en":"Crónica dos Bons Malandros (no English AKA)","tt":"tt0087102","year":1984,"genre":"Comedy","gcode":16,"subgenre":"Crime","sgcode":5,"rt":122,"blocks":3,"age":12,"cert":"M/12","rating":65,"pot":73,"adm":null,"chance":3.0,"credits":["Fernando Lopes","Artur Semedo","João Perry","Lia Gama"],"desc":"Small-time Lisbon crooks plot an ambitious museum robbery together.","flags":["Evergreen"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Lugar do Morto","en":"Dead Man's Seat","tt":"tt0087652","year":1984,"genre":"Thriller","gcode":6,"subgenre":"Mystery","sgcode":8,"rt":120,"blocks":2,"age":12,"cert":"M/12","rating":71,"pot":92,"adm":300000,"chance":1.0,"credits":["António-Pedro Vasconcelos","Pedro Oliveira","Ana Zanatti","Teresa Madruga"],"desc":"A journalist witnesses a death and pursues the woman involved.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"user","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Le Soulier de Satin","en":"The Satin Slipper","tt":"tt0090052","year":1985,"genre":"Historical","gcode":29,"subgenre":"Romantic","sgcode":3,"rt":410,"blocks":4,"age":12,"cert":"M/12","rating":88,"pot":23,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Luís Miguel Cintra","Patricia Barzyk","Anne Consigny"],"desc":"Marathon adaptation of Claudel's play about renounced love across empires.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Um Adeus Português","en":"A Portuguese Goodbye","tt":"tt0088670","year":1986,"genre":"Antiwar","gcode":14,"subgenre":"Drama","sgcode":1,"rt":85,"blocks":2,"age":18,"cert":"M/18","rating":69,"pot":36,"adm":null,"chance":15.0,"credits":["João Botelho","Isabel de Castro","Ruy Furtado","Maria Cabral"],"desc":"Parents visit their daughter while mourning a son killed in Africa.","flags":["Timeless"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Uma Rapariga no Verão","en":"A Girl in Summer","tt":"tt0091824","year":1986,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":85,"blocks":2,"age":12,"cert":"M/12","rating":76,"pot":30,"adm":null,"chance":15.0,"credits":["Vítor Gonçalves","Isabel Galhardo","Diogo Dória","João Perry"],"desc":"A young woman drifts through a summer of unresolved attachments.","flags":["Cult"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Balada da Praia dos Cães","en":"Ballad of Dog Beach","tt":"tt0090689","year":1987,"genre":"Crime","gcode":5,"subgenre":"Mystery","sgcode":8,"rt":100,"blocks":2,"age":12,"cert":"M/12","rating":68,"pot":73,"adm":81995,"chance":3.0,"credits":["José Fonseca e Costa","Raul Solnado","Assumpta Serna","Patrick Bauchau"],"desc":"Police investigate a dissident officer's murder under the Estado Novo.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Bobo","en":"The Jester","tt":"tt0092681","year":1987,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":120,"blocks":2,"age":12,"cert":"M/12","rating":87,"pot":3,"adm":678,"chance":15.0,"credits":["José Álvaro Morais","Fernando Heitor","Paula Guedes","Luís Lucas"],"desc":"A theatre director's historical play collides with post-revolution arms dealing.","flags":["Cult"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"user","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Querido Lilás","en":"O Querido Lilás (no English AKA)","tt":"tt0093810","year":1987,"genre":"Comedy","gcode":16,"subgenre":null,"sgcode":null,"rt":102,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":76,"adm":100000,"chance":3.0,"credits":["Artur Semedo","Herman José","Rita Ribeiro","Artur Semedo"],"desc":"A fading nightclub star's illegitimate son returns to upend her rural estate.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Os Canibais","en":"The Cannibals","tt":"tt0094833","year":1988,"genre":"Fantasy","gcode":4,"subgenre":"Historical","sgcode":29,"rt":98,"blocks":2,"age":12,"cert":"M/12","rating":74,"pot":34,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Luís Miguel Cintra","Leonor Silveira","Diogo Dória"],"desc":"Operatic macabre tale of a bridegroom whose secret ruins his wedding.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Tempos Difíceis","en":"Hard Times","tt":"tt0095279","year":1988,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":90,"blocks":2,"age":12,"cert":"M/12","rating":85,"pot":31,"adm":null,"chance":15.0,"credits":["João Botelho","Henrique Viana","Júlia Britton","Eunice Muñoz"],"desc":"Dickens transposed to 1980s industrial Portugal; a utilitarian father ruins his daughter.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Sangue","en":"Blood","tt":"tt0098252","year":1989,"genre":"Drama","gcode":1,"subgenre":"Mystery","sgcode":8,"rt":95,"blocks":2,"age":16,"cert":"M/14","rating":83,"pot":28,"adm":null,"chance":15.0,"credits":["Pedro Costa","Pedro Hestnes","Nuno Ferreira","Inês de Medeiros"],"desc":"Two brothers hide their father's death and fend off creditors in wintry Lisbon.","flags":["Cult"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"contested","genre":"review"}},{"pt":"Recordações da Casa Amarela","en":"Recollections of the Yellow House","tt":"tt0098175","year":1989,"genre":"Comedy","gcode":16,"subgenre":"Drama","sgcode":1,"rt":122,"blocks":3,"age":16,"cert":"M/16","rating":85,"pot":33,"adm":null,"chance":15.0,"credits":["João César Monteiro","Manuela de Freitas","Ruy Furtado","Maria do Carmo Rôlo"],"desc":"An ailing, lecherous lodger drifts through boarding-house humiliations toward violence.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Non, ou a Vã Glória de Mandar","en":"No, or the Vain Glory of Command","tt":"tt0100269","year":1990,"genre":"Antiwar","gcode":14,"subgenre":"Historical","sgcode":29,"rt":110,"blocks":2,"age":16,"cert":"M/14","rating":85,"pot":36,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Luís Miguel Cintra","Diogo Dória","Miguel Guilherme"],"desc":"A soldier in colonial Africa recounts Portugal's centuries of military defeats.","flags":["Timeless"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"A Divina Comédia","en":"The Divine Comedy","tt":"tt0101739","year":1991,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":140,"blocks":3,"age":12,"cert":"M/12","rating":82,"pot":31,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Maria de Medeiros","Miguel Guilherme","Luís Miguel Cintra"],"desc":"Asylum inmates act out biblical and literary figures in philosophical debate.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"A Idade Maior","en":"Alex","tt":"tt0099824","year":1991,"genre":"Drama","gcode":1,"subgenre":"Antiwar","sgcode":14,"rt":118,"blocks":2,"age":12,"cert":"M/12","rating":72,"pot":37,"adm":7100,"chance":15.0,"credits":["Teresa Villaverde","Ricardo Colares","Teresa Roby","Joaquim de Almeida"],"desc":"A boy grows up awaiting his father's return from the colonial war.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Último Mergulho","en":"The Last Dive","tt":"tt0105924","year":1992,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":88,"blocks":2,"age":12,"cert":"M/12","rating":79,"pot":32,"adm":null,"chance":15.0,"credits":["João César Monteiro","Fabienne Babe","Canto e Castro","Francesca Prandi"],"desc":"In Lisbon, a rescued suicidal youth falls for an older man's daughter.","flags":["Cult"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Amor e Dedinhos de Pé","en":"Love and Tiny Toes","tt":"tt0101335","year":1993,"genre":"Romantic","gcode":3,"subgenre":"Historical","sgcode":29,"rt":125,"blocks":3,"age":12,"cert":"M/12","rating":66,"pot":63,"adm":null,"chance":5.0,"credits":["Luís Filipe Rocha","Joaquim de Almeida","Ana Torrent","Jean-Pierre Cassel"],"desc":"In 1890s Macau, a dissolute Portuguese settler chases love and redemption.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"user","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Vale Abraão","en":"Abraham's Valley","tt":"tt0108471","year":1993,"genre":"Drama","gcode":1,"subgenre":"Romantic","sgcode":3,"rt":187,"blocks":4,"age":12,"cert":"M/12","rating":69,"pot":40,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Leonor Silveira","Cécile Sanz de Alba","Luís Miguel Cintra"],"desc":"A beautiful Douro wife drifts through marriage, affairs and disenchantment across decades.","flags":["Timeless"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Casa de Lava","en":"Down to Earth","tt":"tt0109384","year":1994,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":110,"blocks":2,"age":16,"cert":"M/14","rating":71,"pot":30,"adm":null,"chance":15.0,"credits":["Pedro Costa","Inês de Medeiros","Isaach De Bankolé","Edith Scob"],"desc":"A nurse escorts a comatose migrant worker home to Cape Verde.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Três Irmãos","en":"Two Brothers, My Sister","tt":"tt0111508","year":1994,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":108,"blocks":2,"age":16,"cert":"M/16","rating":84,"pot":39,"adm":null,"chance":15.0,"credits":["Teresa Villaverde","Maria de Medeiros","Marcello Urgeghe","Evgeniy Sidikhin"],"desc":"A young Lisbon woman holds her collapsing family together after tragedy.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"A Comédia de Deus","en":"God's Comedy","tt":"tt0112710","year":1995,"genre":"Comedy","gcode":16,"subgenre":"Drama","sgcode":1,"rt":170,"blocks":3,"age":12,"cert":"M/12","rating":85,"pot":31,"adm":null,"chance":15.0,"credits":["João César Monteiro","Cláudia Teixeira","Manuela de Freitas","Raquel Ascensão"],"desc":"An ice-cream maker catalogues intimate trophies taken from women he seduces.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Adão e Eva","en":"Adam and Eve","tt":"tt0112304","year":1995,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":104,"blocks":2,"age":12,"cert":"M/12","rating":77,"pot":88,"adm":233000,"chance":1.0,"credits":["Joaquim Leitão","Maria de Medeiros","Joaquim de Almeida","Karra Elejalde"],"desc":"A bisexual TV reporter picks a Spanish doctor to father her child.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Corte de Cabelo","en":"Haircut","tt":"tt0112724","year":1995,"genre":"Drama","gcode":1,"subgenre":"Romantic","sgcode":3,"rt":91,"blocks":2,"age":12,"cert":"M/12","rating":74,"pot":36,"adm":null,"chance":15.0,"credits":["Joaquim Sapinho","Carla Bolito","Marco Delgado","Francisco Nascimento"],"desc":"A young Lisbon couple drift through one day as their city transforms.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Convento","en":"The Convent","tt":"tt0112716","year":1995,"genre":"Mystery","gcode":8,"subgenre":"Drama","sgcode":1,"rt":90,"blocks":2,"age":12,"cert":"M/12","rating":73,"pot":55,"adm":null,"chance":8.0,"credits":["Manoel de Oliveira","Catherine Deneuve","John Malkovich","Luís Miguel Cintra"],"desc":"American scholar hunts Shakespeare proof at a convent while his wife is tempted.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Sinais de Fogo","en":"Sinais de Fogo (no English AKA)","tt":"tt0114452","year":1995,"genre":"Drama","gcode":1,"subgenre":"Romantic","sgcode":3,"rt":102,"blocks":2,"age":16,"cert":"M/14","rating":72,"pot":43,"adm":null,"chance":15.0,"credits":["Luís Filipe Rocha","Diogo Infante","Ruth Gabriel","Marcantonio Del Carlo"],"desc":"Young man's awakening as the Spanish Civil War shadows Salazar's Portugal.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Ossos","en":"Bones","tt":"tt0119844","year":1997,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":94,"blocks":2,"age":16,"cert":"M/16","rating":81,"pot":26,"adm":null,"chance":15.0,"credits":["Pedro Costa","Vanda Duarte","Nuno Vaz","Mariya Lipkina"],"desc":"Destitute young parents in a Lisbon shantytown drift around an unwanted infant.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Tentação","en":"Temptation","tt":"tt0120307","year":1997,"genre":"Drama","gcode":1,"subgenre":"Romantic","sgcode":3,"rt":115,"blocks":2,"age":16,"cert":"M/16","rating":74,"pot":94,"adm":361000,"chance":1.0,"credits":["Joaquim Leitão","Joaquim de Almeida","Cristina Câmara","Diogo Infante"],"desc":"A village priest's vocation crumbles when he desires a troubled young woman.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"user","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Viagem ao Princípio do Mundo","en":"Voyage to the Beginning of the World","tt":"tt0120443","year":1997,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":91,"blocks":2,"age":12,"cert":"M/12","rating":87,"pot":47,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Marcello Mastroianni","Jean-Yves Gautier","Leonor Silveira"],"desc":"Ageing director drives an actor through Portugal seeking his father's native village.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Fintar o Destino","en":"Dribbling Fate","tt":"tt0119122","year":1998,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":77,"blocks":2,"age":12,"cert":"M/12","rating":72,"pot":55,"adm":null,"chance":8.0,"credits":["Fernando Vendrell","Carlos Germano","Betina Lopes","Paulo Miranda"],"desc":"At fifty, a shopkeeper still nurses the football career he never had.","flags":["Evergreen"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"contested","genre":"review"}},{"pt":"Os Mutantes","en":"The Mutants","tt":"tt0120763","year":1998,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":113,"blocks":2,"age":12,"cert":"M/12","rating":79,"pot":37,"adm":null,"chance":15.0,"credits":["Teresa Villaverde","Ana Moreira","Alexandre Pinto","Nelson Varela"],"desc":"Three abandoned teenagers drift through institutions and Lisbon streets toward bleak adulthood.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Pesadelo Cor de Rosa","en":"Sweet Nightmare","tt":"tt0120732","year":1998,"genre":"Comedy","gcode":16,"subgenre":"Romantic","sgcode":3,"rt":96,"blocks":2,"age":16,"cert":"M/14","rating":69,"pot":85,"adm":185000,"chance":1.0,"credits":["Fernando Fragata","Diogo Infante","Catarina Furtado","George Felner"],"desc":"A British engineer inspecting a dam falls for a volatile woman just out of jail.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Sapatos Pretos","en":"Black Shoes","tt":"tt0120064","year":1998,"genre":"Crime","gcode":5,"subgenre":"Thriller","sgcode":6,"rt":95,"blocks":2,"age":18,"cert":"M/18","rating":69,"pot":66,"adm":52387,"chance":5.0,"credits":["João Canijo","Ana Bustorff","Vítor Norte","João Reis"],"desc":"Rural Alentejo adultery escalates into killing, adapted from a real criminal case.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Zona J","en":"Zona J (no English AKA)","tt":"tt0164987","year":1998,"genre":"Drama","gcode":1,"subgenre":"Crime","sgcode":5,"rt":96,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":88,"adm":238000,"chance":1.0,"credits":["Leonel Vieira","Félix Fontoura","Nuria Madruga","Milton Spencer"],"desc":"Romance across racial lines strains loyalties in a tough Lisbon housing estate.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"A Carta","en":"The Letter","tt":"tt0158117","year":1999,"genre":"Romantic","gcode":3,"subgenre":"Drama","sgcode":1,"rt":107,"blocks":2,"age":12,"cert":"M/12","rating":81,"pot":51,"adm":null,"chance":8.0,"credits":["Manoel de Oliveira","Chiara Mastroianni","Pedro Abrunhosa","Antoine Chappey"],"desc":"Wife in a loveless marriage resists her passion for a famous singer.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"As Bodas de Deus","en":"The Spousals of God","tt":"tt0119413","year":1999,"genre":"Comedy","gcode":16,"subgenre":"Fantasy","sgcode":4,"rt":150,"blocks":3,"age":16,"cert":"M/16","rating":66,"pot":30,"adm":null,"chance":15.0,"credits":["João César Monteiro","Rita Durão","Joana Azevedo","Manuela de Freitas"],"desc":"A divine messenger's visit lets a libertine gamble for another man's lover.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Inferno","en":"Inferno (no English AKA)","tt":"tt0209043","year":1999,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":114,"blocks":2,"age":16,"cert":"M/16","rating":58,"pot":70,"adm":null,"chance":3.0,"credits":["Joaquim Leitão","Joaquim de Almeida","Nicolau Breyner","Ana Bustorff"],"desc":"Ten Angola war veterans meet for their yearly dinner, until a prostitute and a hunt gone wrong turn it deadly.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Jaime","en":"Jaime","tt":"tt0120790","year":1999,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":111,"blocks":2,"age":12,"cert":"M/12","rating":80,"pot":86,"adm":199000,"chance":1.0,"credits":["António-Pedro Vasconcelos","Saúl Fonseca","Fernanda Serrano","Joaquim Leitão"],"desc":"Determined boy chases money for a motorbike, hoping to reunite his parents.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Branca de Neve","en":"Snow White","tt":"tt0267155","year":2000,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":75,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":7,"adm":null,"chance":15.0,"credits":["João César Monteiro","Maria do Carmo Rôlo","Ana Brandão","Reginaldo da Cruz"],"desc":"Walser's Snow White spoken over a near-black screen; voices replace images almost entirely.","flags":["Cult"],"src":{"rating":"estimate","potential":"user","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Capitães de Abril","en":"April Captains","tt":"tt0120626","year":2000,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":123,"blocks":3,"age":12,"cert":"M/12","rating":77,"pot":77,"adm":110000,"chance":3.0,"credits":["Maria de Medeiros","Stefano Accorsi","Joaquim de Almeida","Frédéric Pierrot"],"desc":"Army captains lead the 1974 coup that ended Portugal's dictatorship in a day.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"No Quarto da Vanda","en":"In Vanda's Room","tt":"tt0139500","year":2000,"genre":"Documentary","gcode":11,"subgenre":"Drama","sgcode":1,"rt":171,"blocks":3,"age":16,"cert":"M/16","rating":73,"pot":25,"adm":null,"chance":15.0,"credits":["Pedro Costa","Vanda Duarte","Lena Duarte","Manuel Gomes Miranda"],"desc":"Addicts talk in a Lisbon slum room while demolition crews level the neighbourhood.","flags":["Cult"],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Fantasma","en":"O Fantasma (no English AKA)","tt":"tt0239381","year":2000,"genre":"Drama","gcode":1,"subgenre":"Erotic","sgcode":28,"rt":87,"blocks":2,"age":16,"cert":"M/16","rating":75,"pot":42,"adm":10000,"chance":15.0,"credits":["João Pedro Rodrigues","Ricardo Meneses","Beatriz Torcato","André Barbosa"],"desc":"A night garbage collector's fixation on a young man turns predatory and feral.","flags":["Cult"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Palavra e Utopia","en":"Word and Utopia","tt":"tt0200257","year":2000,"genre":"Historical","gcode":29,"subgenre":"Drama","sgcode":1,"rt":130,"blocks":3,"age":12,"cert":"M/12","rating":75,"pot":32,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Lima Duarte","Luís Miguel Cintra","Ricardo Trêpa"],"desc":"Three actors play Jesuit preacher António Vieira defending Brazil's natives against empire.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Peixe-Lua","en":"Moonfish","tt":"tt0191352","year":2000,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":124,"blocks":3,"age":12,"cert":"M/12","rating":76,"pot":40,"adm":null,"chance":15.0,"credits":["José Álvaro Morais","Beatriz Batarda","Marcello Urgeghe","Ricardo Aibéo"],"desc":"Two summers apart, young friends near Lisbon face love, loss and adulthood.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Raiz do Coração","en":"The Heart's Root","tt":"tt0189960","year":2001,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":118,"blocks":2,"age":12,"cert":"M/12","rating":72,"pot":32,"adm":null,"chance":15.0,"credits":["Paulo Rocha","Luís Miguel Cintra","Joana Bárcia","Isabel Ruth"],"desc":"A nationalist politician's obsession with a trans woman spirals into blackmail.","flags":["Cult"],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Camarate","en":"Camarate","tt":"tt0120624","year":2001,"genre":"Drama","gcode":1,"subgenre":"Historical","sgcode":29,"rt":100,"blocks":2,"age":12,"cert":"M/12","rating":68,"pot":59,"adm":null,"chance":8.0,"credits":["Luís Filipe Rocha","Maria João Luís","Virgílio Castelo","Filipe Ferrer"],"desc":"A judge reopens the 1980 crash that killed Portugal's prime minister.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Ganhar a Vida","en":"Get a Life","tt":"tt0284141","year":2001,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":115,"blocks":2,"age":16,"cert":"M/16","rating":70,"pot":43,"adm":null,"chance":15.0,"credits":["João Canijo","Rita Blanco","Adriano Luz","Teresa Madruga"],"desc":"A Portuguese cleaner in Paris demands justice after police kill her son.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Rasganço","en":"Rending","tt":"tt0228766","year":2001,"genre":"Drama","gcode":1,"subgenre":"Crime","sgcode":5,"rt":93,"blocks":2,"age":12,"cert":"M/12","rating":66,"pot":43,"adm":null,"chance":15.0,"credits":["Raquel Freire","Ricardo Aibéo","Ana Teresa Carvalhosa","Isabel Ruth"],"desc":"Coimbra student life exposes brutal hazing rituals, violence and generational disillusion.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Vou Para Casa","en":"I'm Going Home","tt":"tt0283422","year":2001,"genre":"Drama","gcode":1,"subgenre":"Comedy","sgcode":16,"rt":90,"blocks":2,"age":12,"cert":"M/12","rating":83,"pot":50,"adm":null,"chance":8.0,"credits":["Manoel de Oliveira","Michel Piccoli","Catherine Deneuve","John Malkovich"],"desc":"An ageing Paris stage actor loses his family and abandons his profession.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Água e Sal","en":"Water and Salt","tt":"tt0235110","year":2001,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":117,"blocks":2,"age":12,"cert":"M/12","rating":69,"pot":27,"adm":3600,"chance":15.0,"credits":["Teresa Villaverde","Galatea Ranzi","Joaquim de Almeida","Alexandre Pinto"],"desc":"A woman alone at a seaside house drifts through encounters after her husband leaves.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Jangada de Pedra","en":"The Stone Raft","tt":"tt0175203","year":2002,"genre":"Fantasy","gcode":4,"subgenre":"Science Fiction","sgcode":2,"rt":117,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":55,"adm":null,"chance":8.0,"credits":["George Sluizer","Federico Luppi","Icíar Bollaín","Gabino Diego"],"desc":"The Iberian Peninsula breaks off Europe and drifts; five strangers travel together.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Selva","en":"The Forest","tt":"tt0210971","year":2002,"genre":"Adventure","gcode":9,"subgenre":"Historical","sgcode":29,"rt":105,"blocks":2,"age":16,"cert":"M/16","rating":60,"pot":66,"adm":null,"chance":5.0,"credits":["Leonel Vieira","Diogo Morgado","Chico Díaz","Maitê Proença"],"desc":"An exiled Portuguese monarchist labours on a 1912 Amazon rubber plantation.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Delfim","en":"The Dauphin","tt":"tt0175557","year":2002,"genre":"Mystery","gcode":8,"subgenre":"Drama","sgcode":1,"rt":88,"blocks":2,"age":12,"cert":"M/12","rating":74,"pot":40,"adm":null,"chance":15.0,"credits":["Fernando Lopes","Rogério Samora","Alexandra Lencastre","Isabel Ruth"],"desc":"A hunter revisits a lagoon estate and uncovers the landowning couple's grim fate.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"O Princípio da Incerteza","en":"The Uncertainty Principle","tt":"tt0303162","year":2002,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":133,"blocks":3,"age":12,"cert":"M/12","rating":78,"pot":34,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Leonor Baldaque","Leonor Silveira","Isabel Ruth"],"desc":"Rivalry between two women shapes a wealthy northern family's marriage and secrets.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"A Mulher Polícia","en":"The Policewoman","tt":"tt0119727","year":2003,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":84,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":34,"adm":null,"chance":15.0,"credits":["Joaquim Sapinho","Amélia Corôa","Vítor Norte","Ana Nave"],"desc":"A mother and son flee to Lisbon to escape state-enforced separation.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Os Imortais","en":"The Immortals","tt":"tt0367878","year":2003,"genre":"Crime","gcode":5,"subgenre":"Thriller","sgcode":6,"rt":130,"blocks":3,"age":12,"cert":"M/12","rating":69,"pot":66,"adm":51476,"chance":5.0,"credits":["António-Pedro Vasconcelos","Joaquim de Almeida","Emmanuelle Seigner","Nicolau Breyner"],"desc":"Colonial-war veterans reunite yearly, plan a bank robbery, then unravel over old secrets.","flags":["Evergreen"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Quaresma","en":"Lent","tt":"tt0368187","year":2003,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":95,"blocks":2,"age":12,"cert":"M/12","rating":73,"pot":36,"adm":null,"chance":15.0,"credits":["José Álvaro Morais","Beatriz Batarda","Filipe Cary","Rita Durão"],"desc":"A man about to emigrate returns for a funeral, falls for a cousin's wife.","flags":[],"src":{"rating":"estimate","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Um Filme Falado","en":"A Talking Picture","tt":"tt0364093","year":2003,"genre":"Drama","gcode":1,"subgenre":"Comedy","sgcode":16,"rt":96,"blocks":2,"age":12,"cert":"M/12","rating":68,"pot":47,"adm":null,"chance":15.0,"credits":["Manoel de Oliveira","Leonor Silveira","Filipa de Almeida","John Malkovich"],"desc":"A historian and her daughter sail the Mediterranean visiting ancient sites before catastrophe.","flags":[],"src":{"rating":"awards","potential":"estimate","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Vai~e~Vem","en":"Come and Go","tt":"tt0367195","year":2003,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":175,"blocks":3,"age":16,"cert":"M/16","rating":84,"pot":45,"adm":12302,"chance":15.0,"credits":["João César Monteiro","Rita Pereira Marques","Joaquina Chicau","Manuela de Freitas"],"desc":"An elderly Lisbon widower rides buses and interviews maids while facing mortality.","flags":["Cult"],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"A Cara que Mereces","en":"The Face You Deserve","tt":"tt0442940","year":2004,"genre":"Comedy","gcode":16,"subgenre":"Fantasy","sgcode":4,"rt":108,"blocks":2,"age":12,"cert":"M/12","rating":69,"pot":5,"adm":773,"chance":15.0,"credits":["Miguel Gomes","José Airosa","Gracinda Nave","Sara Graça"],"desc":"A man turning thirty catches measles and lands among seven odd housemates.","flags":["Cult"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"A Costa dos Murmúrios","en":"The Murmuring Coast","tt":"tt0406669","year":2004,"genre":"Antiwar","gcode":14,"subgenre":"Drama","sgcode":1,"rt":120,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":45,"adm":12231,"chance":15.0,"credits":["Margarida Cardoso","Beatriz Batarda","Filipe Duarte","Mónica Calle"],"desc":"A young bride joins her soldier husband in wartime Mozambique and confronts colonial brutality.","flags":["Timeless"],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"André Valente","en":"André Valente (no English AKA)","tt":"tt0419445","year":2004,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":75,"blocks":2,"age":6,"cert":"M/6","rating":66,"pot":20,"adm":2197,"chance":15.0,"credits":["Catarina Ruivo","Leonardo Viveiros","Rita Durão","Dmitry Bogomolov"],"desc":"A Lisbon boy awaits his absent father while his mother struggles alone.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Kiss Me","en":"Kiss Me","tt":"tt0438893","year":2004,"genre":"Romantic","gcode":3,"subgenre":"Drama","sgcode":1,"rt":119,"blocks":2,"age":12,"cert":"M/12","rating":58,"pot":51,"adm":18693,"chance":8.0,"credits":["António da Cunha Telles","Marisa Cruz","Manuel Wiborg","Nicolau Breyner"],"desc":"In 1950s Portugal a woman leaves her abusive husband chasing Monroe-style dreams.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"review"}},{"pt":"Lá Fora","en":"Lá Fora (no English AKA)","tt":"tt0375937","year":2004,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":107,"blocks":2,"age":12,"cert":"M/12","rating":66,"pot":41,"adm":9364,"chance":15.0,"credits":["Fernando Lopes","Alexandra Lencastre","Rogério Samora","Maria João Abreu"],"desc":"A stockbroker secretly obsesses over a TV news anchor until a broadcast unites them.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Noite Escura","en":"In the Darkness of the Night","tt":"tt0413053","year":2004,"genre":"Crime","gcode":5,"subgenre":"Thriller","sgcode":6,"rt":94,"blocks":2,"age":12,"cert":"M/12","rating":76,"pot":46,"adm":13060,"chance":15.0,"credits":["João Canijo","Fernando Luís","Rita Blanco","Beatriz Batarda"],"desc":"Border-town nightclub owner's family unravels across one night of coercion and violence.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Milagre Segundo Salomé","en":"The Miracle According to Salomé","tt":"tt0411665","year":2004,"genre":"Romantic","gcode":3,"subgenre":"Drama","sgcode":1,"rt":97,"blocks":2,"age":12,"cert":"M/12","rating":64,"pot":52,"adm":20232,"chance":8.0,"credits":["Mário Barroso","Nicolau Breyner","Ana Bandeira","Ricardo Pereira"],"desc":"In 1917 Portugal a prostitute's fate entwines with the Fátima apparitions.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"O Quinto Império","en":"The Fifth Empire","tt":"tt0403439","year":2004,"genre":"Historical","gcode":29,"subgenre":"Drama","sgcode":1,"rt":127,"blocks":3,"age":12,"cert":"M/12","rating":65,"pot":39,"adm":8218,"chance":15.0,"credits":["Manoel de Oliveira","Ricardo Trêpa","Luís Miguel Cintra","Glória de Matos"],"desc":"Young King Sebastião pursues messianic destiny, goaded by a visionary shoemaker prophet.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Portugal S.A.","en":"Portugal S.A.","tt":"tt0401726","year":2004,"genre":"Thriller","gcode":6,"subgenre":"Drama","sgcode":1,"rt":95,"blocks":2,"age":12,"cert":"M/12","rating":60,"pot":52,"adm":20121,"chance":8.0,"credits":["Ruy Guerra","Diogo Infante","Cristina Câmara","Henrique Viana"],"desc":"A corporate manager married for ambition still pines for a wealthy family's daughter.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Sorte Nula","en":"Sorte Nula (no confirmed English AKA)","tt":"tt0420211","year":2004,"genre":"Mystery","gcode":8,"subgenre":"Crime","sgcode":5,"rt":85,"blocks":2,"age":12,"cert":"M/12","rating":58,"pot":71,"adm":74095,"chance":3.0,"credits":["Fernando Fragata","Rui Unas","Bruno Nogueira","António Feio"],"desc":"A man's meticulously planned escape with his lover collapses through sheer bad luck.","flags":["Evergreen"],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"mirror","year":"ok","genre":"owner"}},{"pt":"Adriana","en":"Adriana (no English AKA)","tt":"tt0487867","year":2005,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":102,"blocks":2,"age":12,"cert":"M/12","rating":70,"pot":37,"adm":7019,"chance":15.0,"credits":["Margarida Gil","Ana Moreira","Isabel Ruth","Bruno Bravo"],"desc":"An island woman seeks a man to father her child and continue the line.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"contested","genre":"review"}},{"pt":"Alice","en":"Alice","tt":"tt0459072","year":2005,"genre":"Drama","gcode":1,"subgenre":"Mystery","sgcode":8,"rt":102,"blocks":2,"age":16,"cert":"M/16","rating":84,"pot":60,"adm":33489,"chance":5.0,"credits":["Marco Martins","Nuno Lopes","Beatriz Batarda","Miguel Guilherme"],"desc":"A Lisbon father obsessively films the city hunting for his vanished young daughter.","flags":[],"src":{"rating":"awards","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Crime do Padre Amaro","en":"The Crime of Father Amaro","tt":"tt0487887","year":2005,"genre":"Drama","gcode":1,"subgenre":"Romantic","sgcode":3,"rt":100,"blocks":2,"age":16,"cert":"M/16","rating":45,"pot":95,"adm":380671,"chance":1.0,"credits":["Carlos Coelho da Silva","Jorge Corrula","Soraia Chaves","Nicolau Breyner"],"desc":"A young priest's affair with a devout girl spirals into scandal and tragedy.","flags":["Evergreen"],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"O Fatalista","en":"The Fatalist","tt":"tt0472778","year":2005,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":99,"blocks":2,"age":12,"cert":"M/12","rating":74,"pot":26,"adm":3291,"chance":15.0,"credits":["João Botelho","Rui Morisson","André Gomes","Rogério Samora"],"desc":"A chauffeur and his master roam Portugal debating fate and love.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"owner"}},{"pt":"Odete","en":"Two Drifters","tt":"tt0450470","year":2005,"genre":"Drama","gcode":1,"subgenre":null,"sgcode":null,"rt":98,"blocks":2,"age":16,"cert":"M/16","rating":81,"pot":18,"adm":1846,"chance":15.0,"credits":["João Pedro Rodrigues","Ana Cristina de Oliveira","Nuno Gil","João Carreira"],"desc":"A grieving woman insists the dead stranger she never met fathered her child.","flags":["Cult"],"src":{"rating":"awards","potential":"admissions","cert":"user","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}},{"pt":"Um Tiro no Escuro","en":"A Shot in the Dark","tt":"tt0457182","year":2005,"genre":"Crime","gcode":5,"subgenre":"Action","sgcode":0,"rt":105,"blocks":2,"age":16,"cert":"M/16","rating":56,"pot":57,"adm":28571,"chance":8.0,"credits":["Leonel Vieira","Joaquim de Almeida","Vanessa Machado","Filipe Duarte"],"desc":"A stripper whose baby was stolen joins a Lisbon bank-robbery gang.","flags":[],"src":{"rating":"estimate","potential":"admissions","cert":"listing","runtime":"listing","cast":"imdb","year":"ok","genre":"review"}}];
+const pre = document.getElementById('json');
+const pretty = JSON.stringify(DATA, null, 1);
+pre.textContent = pretty;
+document.getElementById('meta').textContent =
+  `${DATA.length} films · ${(pretty.length/1024).toFixed(0)} KB JSON`;
+document.getElementById('copy').addEventListener('click', async e => {
+  try { await navigator.clipboard.writeText(JSON.stringify(DATA)); e.target.textContent = 'Copied'; }
+  catch { const r = document.createRange(); r.selectNode(pre);
+          getSelection().removeAllRanges(); getSelection().addRange(r);
+          e.target.textContent = 'Selected — press ⌘C'; }
+  setTimeout(() => e.target.textContent = 'Copy JSON', 2200);
+});
+document.getElementById('toggle').addEventListener('click', e => {
+  const open = pre.style.maxHeight === 'none';
+  pre.style.maxHeight = open ? '420px' : 'none';
+  e.target.textContent = open ? 'Expand' : 'Collapse';
+});
+</script>

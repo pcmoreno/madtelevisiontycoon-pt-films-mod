@@ -1,0 +1,42 @@
+{
+  "_comment": "User-supplied changes to the handoff dataset, applied on top of the artifact's DATA. Genre changes live in genre_review.csv.",
+  "Branca de Neve": {
+    "pot": 7,
+    "src": {
+      "potential": "user"
+    },
+    "why": "User: audience should be around 5 to 10; mostly black screen, cult film."
+  },
+  "Inferno": {
+    "desc": "Ten Angola war veterans meet for their yearly dinner, until a prostitute and a hunt gone wrong turn it deadly.",
+    "why": "Verified 2026-10-18 (Cineuropa, Harvard Film Archive); old sources had mixed it up with Os Imortais."
+  },
+  "O Convento": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "Viagem ao Princípio do Mundo": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "A Carta": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "Capitães de Abril": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "Vou Para Casa": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "A Jangada de Pedra": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  },
+  "Um Filme Falado": {
+    "flags": [],
+    "why": "User 2026-10-18: no Premium flags in the mod."
+  }
+}

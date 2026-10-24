@@ -1,0 +1,195 @@
+﻿id,job,name,suggested
+9000001,director,António da Cunha Telles,António da Cunha Tellez
+9000002,director,António-Pedro Vasconcelos,António-Pedro Vasconselos
+9000003,director,Artur Semedo,Artur Semeda
+9000004,director,Carlos Coelho da Silva,Carlos Coelho da Selva
+9000005,director,Catarina Ruivo,Catarina Ruiva
+9000006,director,Fernando Fragata,Fernando Fregata
+9000007,director,Fernando Lopes,Fernando Lupes
+9000008,director,Fernando Vendrell,Fernando Vendrel
+9000009,director,George Sluizer,George Sluyzer
+9000010,director,Joaquim Leitão,Joaquim Leirão
+9000011,director,Joaquim Sapinho,Joaquim Sopinho
+9000012,director,José Fonseca e Costa,José Fonseca e Custa
+9000013,director,José Álvaro Morais,José Álvaro Moraes
+9000014,director,João Botelho,João Botilho
+9000015,director,João Canijo,João Canejo
+9000016,director,João César Monteiro,João César Monteira
+9000017,director,João Pedro Rodrigues,João Pedro Rodriguez
+9000018,director,Leonel Vieira,Leonel Vieyra
+9000019,director,Luís Filipe Rocha,Luís Filipe Rucha
+9000020,director,Luís Galvão Teles,Luís Galvão Tales
+9000021,director,Manoel de Oliveira,Manoel de Olivera
+9000022,director,Marco Martins,Marco Mertins
+9000023,director,Margarida Cardoso,Margarida Cardozo
+9000024,director,Margarida Gil,Margarida Gill
+9000025,director,Maria de Medeiros,Maria de Madeiros
+9000026,director,Miguel Gomes,Miguel Gomez
+9000027,director,Mário Barroso,Mário Barrozo
+9000028,director,Paulo Rocha,Paulo Rocca
+9000029,director,Pedro Costa,Pedro Kosta
+9000030,director,Raquel Freire,Raquel Freira
+9000031,director,Ruy Guerra,Ruy Guerro
+9000032,director,Teresa Villaverde,Teresa Villaverda
+9000033,director,Vítor Gonçalves,Vítor Gonçalvez
+9000034,actor,Adriano Luz,Adriano Lux
+9000035,actor,Alexandra Lencastre,Alexandra Lancastre
+9000036,actor,Alexandre Pinto,Alexandre Pintu
+9000037,actor,Amélia Corôa,Amélia Corôna
+9000038,actor,Ana Bandeira,Ana Bandeiro
+9000039,actor,Ana Brandão,Ana Brendão
+9000040,actor,Ana Bustorff,Ana Bustorf
+9000041,actor,Ana Cristina de Oliveira,Ana Cristina de Oliviera
+9000042,actor,Ana Moreira,Ana Morera
+9000043,actor,Ana Nave,Ana Neve
+9000044,actor,Ana Teresa Carvalhosa,Ana Teresa Carvalhoza
+9000045,actor,Ana Torrent,Ana Torrant
+9000046,actor,Ana Zanatti,Ana Zanotti
+9000047,actor,André Barbosa,André Barboza
+9000048,actor,André Gomes,André Gommes
+9000049,actor,Anne Consigny,Anne Consigni
+9000050,actor,Antoine Chappey,Antoine Chappay
+9000051,actor,António Feio,António Feyo
+9000052,actor,Artur Semedo,Artur Semeda
+9000053,actor,Assumpta Serna,Assumpta Cerna
+9000054,actor,Beatriz Batarda,Beatriz Batarta
+9000055,actor,Beatriz Torcato,Beatriz Torcado
+9000056,actor,Betina Lopes,Betina Lopez
+9000057,actor,Bruno Bravo,Bruno Brava
+9000058,actor,Bruno Nogueira,Bruno Nogueiro
+9000059,actor,Canto e Castro,Canto e Crasto
+9000060,actor,Carla Bolito,Carla Bolita
+9000061,actor,Carlos Germano,Carlos Germino
+9000062,actor,Catarina Furtado,Catarina Furtada
+9000063,actor,Catherine Deneuve,Catherine Deneuvre
+9000064,actor,Chiara Mastroianni,Chiara Mastroiani
+9000065,actor,Chico Díaz,Chico Diez
+9000066,actor,Clara Joana,Clara Joanna
+9000067,actor,Cláudia Teixeira,Cláudia Teixera
+9000068,actor,Cristina Câmara,Cristina Câmera
+9000069,actor,Cécile Sanz de Alba,Cécile Sanz de Elba
+9000070,actor,Diogo Dória,Diogo Dório
+9000071,actor,Diogo Infante,Diogo Infanta
+9000072,actor,Diogo Morgado,Diogo Morgada
+9000073,actor,Dmitry Bogomolov,Dmitry Bogomalov
+9000074,actor,Edith Scob,Edith Scub
+9000075,actor,Emmanuelle Seigner,Emmanuelle Seignar
+9000076,actor,Eunice Muñoz,Eunice Muñez
+9000077,actor,Evgeniy Sidikhin,Evgeniy Sidikin
+9000078,actor,Fabienne Babe,Fabienne Bebe
+9000079,actor,Federico Luppi,Federico Lupi
+9000080,actor,Fernanda Borsatti,Fernanda Borsotti
+9000081,actor,Fernanda Serrano,Fernanda Serrana
+9000082,actor,Fernando Cabral Martins,Fernando Cobral Martins
+9000083,actor,Fernando Heitor,Fernando Heytor
+9000084,actor,Fernando Luís,Fernando Luiz
+9000085,actor,Filipa de Almeida,Filipa de Almeyda
+9000086,actor,Filipe Cary,Filipe Carey
+9000087,actor,Filipe Duarte,Filipe Duarta
+9000088,actor,Filipe Ferrer,Filipe Ferrar
+9000089,actor,Francesca Prandi,Francesca Brandi
+9000090,actor,Francisco Nascimento,Francisco Nascimonto
+9000091,actor,Frédéric Pierrot,Frédéric Pierrat
+9000092,actor,Félix Fontoura,Félix Fantoura
+9000093,actor,Gabino Diego,Gabino Diago
+9000094,actor,Galatea Ranzi,Galatea Ranzo
+9000095,actor,George Felner,George Fellner
+9000096,actor,Glória de Matos,Glória de Motos
+9000097,actor,Gracinda Nave,Gracinda Nava
+9000098,actor,Henrique Viana,Henrique Vianna
+9000099,actor,Herman José,Herman Josué
+9000100,actor,Icíar Bollaín,Icíar Bollaím
+9000101,actor,Inês de Medeiros,Inês de Madeiros
+9000102,actor,Isaach De Bankolé,Isaach De Bankolá
+9000103,actor,Isabel Galhardo,Isabel Galhardu
+9000104,actor,Isabel Ruth,Isabel Rute
+9000105,actor,Isabel de Castro,Isabel de Crasto
+9000106,actor,Jean-Pierre Cassel,Jean-Pierre Cassal
+9000107,actor,Jean-Yves Gautier,Jean-Yves Gauthiar
+9000108,actor,Joana Azevedo,Joana Azevedu
+9000109,actor,Joana Bárcia,Joana Bárcio
+9000110,actor,Joaquim Leitão,Joaquim Leirão
+9000111,actor,Joaquim de Almeida,Joaquim de Almieda
+9000112,actor,Joaquina Chicau,Joaquina Chicão
+9000113,actor,John Malkovich,John Malkovitch
+9000114,actor,Jorge Corrula,Jorge Curula
+9000115,actor,José Airosa,José Airoza
+9000116,actor,João Carreira,João Carreiro
+9000117,actor,João Perry,João Parry
+9000118,actor,João Reis,João Reiz
+9000119,actor,Juliet Berto,Juliet Berta
+9000120,actor,Júlia Britton,Júlia Brittan
+9000121,actor,Karra Elejalde,Karra Elejalda
+9000122,actor,Lena Duarte,Lena Doarte
+9000123,actor,Leonardo Viveiros,Leonardo Viveiras
+9000124,actor,Leonor Baldaque,Leonor Baldoque
+9000125,actor,Leonor Silveira,Leonor Silveiro
+9000126,actor,Lia Gama,Lia Gamma
+9000127,actor,Lima Duarte,Lima Duartte
+9000128,actor,Luís Lucas,Luís Lukas
+9000129,actor,Luís Miguel Cintra,Luís Miguel Sintra
+9000130,actor,Maitê Proença,Maitê Proenço
+9000131,actor,Manuel Gomes Miranda,Manuel Gomes Moranda
+9000132,actor,Manuel Wiborg,Manuel Wiburg
+9000133,actor,Manuela de Freitas,Manuela de Freytas
+9000134,actor,Marcantonio Del Carlo,Marcantonio Del Carla
+9000135,actor,Marcello Mastroianni,Marcello Mastroiani
+9000136,actor,Marcello Urgeghe,Marcello Urgheghe
+9000137,actor,Marco Delgado,Marco Delgada
+9000138,actor,Maria Cabral,Maria Cabrel
+9000139,actor,Maria João Abreu,Maria João Abrel
+9000140,actor,Maria João Luís,Maria João Luiz
+9000141,actor,Maria de Medeiros,Maria de Madeiros
+9000142,actor,Maria do Carmo Rôlo,Maria do Carmo Rôlho
+9000143,actor,Marisa Cruz,Marisa Kruz
+9000144,actor,Mariya Lipkina,Mariya Lipkona
+9000145,actor,Michel Piccoli,Michel Piccolo
+9000146,actor,Miguel Guilherme,Miguel Guilhermo
+9000147,actor,Milton Spencer,Milton Spenser
+9000148,actor,Milú,Miló
+9000149,actor,Mário Barroso,Mário Barrozo
+9000150,actor,Mário Viegas,Mário Vegas
+9000151,actor,Mónica Calle,Mónica Kalle
+9000152,actor,Nelson Varela,Nelson Varella
+9000153,actor,Nicolau Breyner,Nicolau Breiner
+9000154,actor,Nuno Ferreira,Nuno Ferrera
+9000155,actor,Nuno Gil,Nuno Gal
+9000156,actor,Nuno Lopes,Nuno Lopis
+9000157,actor,Nuno Vaz,Nuno Vas
+9000158,actor,Nuria Madruga,Nuria Madruca
+9000159,actor,Patricia Barzyk,Patricia Barzik
+9000160,actor,Patrick Bauchau,Patrick Bouchau
+9000161,actor,Paula Guedes,Paula Guedez
+9000162,actor,Paulo Miranda,Paulo Mirando
+9000163,actor,Pedro Abrunhosa,Pedro Abrunhoza
+9000164,actor,Pedro Hestnes,Pedro Hestness
+9000165,actor,Pedro Oliveira,Pedro Olivera
+9000166,actor,Raquel Ascensão,Rakel Ascensão
+9000167,actor,Raul Solnado,Raul Solnada
+9000168,actor,Reginaldo da Cruz,Reginaldo da Crus
+9000169,actor,Ricardo Aibéo,Ricardo Aibéu
+9000170,actor,Ricardo Colares,Ricardo Collares
+9000171,actor,Ricardo Meneses,Ricardo Menezes
+9000172,actor,Ricardo Pereira,Ricardo Pereyra
+9000173,actor,Ricardo Trêpa,Ricardo Trêppa
+9000174,actor,Rita Blanco,Rita Blanca
+9000175,actor,Rita Durão,Rita Durán
+9000176,actor,Rita Pereira Marques,Rita Pereira Marquez
+9000177,actor,Rita Ribeiro,Rita Ribeira
+9000178,actor,Rogério Samora,Rogério Zamora
+9000179,actor,Rui Morisson,Rui Morison
+9000180,actor,Rui Unas,Rui Unhas
+9000181,actor,Ruth Gabriel,Ruth Gabriela
+9000182,actor,Ruy Furtado,Ruy Fortado
+9000183,actor,Sara Graça,Sara Graço
+9000184,actor,Saúl Fonseca,Saúl Fonsica
+9000185,actor,Soraia Chaves,Soraia Chavez
+9000186,actor,Stefano Accorsi,Stefano Acorsi
+9000187,actor,Teresa Madruga,Teresa Madrugo
+9000188,actor,Teresa Menezes,Teresa Menezis
+9000189,actor,Teresa Roby,Teresa Robby
+9000190,actor,Vanda Duarte,Vanda Darte
+9000191,actor,Vanessa Machado,Vanessa Machadinha
+9000192,actor,Virgílio Castelo,Virgílio Costelo
+9000193,actor,Vítor Norte,Vítor Narte
+9000194,actor,Zita Duarte,Zita Darte

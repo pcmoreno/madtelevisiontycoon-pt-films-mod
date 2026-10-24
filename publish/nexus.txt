@@ -1,0 +1,178 @@
+NAME
+Portuguese Film Pack - 80 Films 1981-2005
+
+VERSION
+1.0
+
+SUMMARY (brief overview field)
+80 Portuguese films from 1981 to 2005 for your film market, rental shop and pirate dealer, from art-house classics to box-office comedies. Parody titles and names in the game's own style, black-and-white lookalike pictures and a one-click Windows installer.
+
+CATEGORY / TAGS
+Category: whichever fits new content best (e.g. Movies / Content / Miscellaneous, depending on what the game page offers)
+Tags (if offered): Content, Movies, Portuguese, Installer
+Content declaration: tick "AI-generated content" (the 80 pictures)
+
+FILE
+File name: Portuguese Film Pack
+Version: 1.0
+Category: Main files
+Upload: build/PacotePortugues-1.0.zip
+File description: 80 Portuguese films for EA2026-10-15A. Extract the zip, then double-click Install.bat.
+
+DESCRIPTION (BBCode, paste into the description editor's BBCode/source view)
+------------------------------------------------------------------------
+[size=5][b]Bring Portuguese cinema to your channel.[/b][/size]
+
+The [b]Portuguese Film Pack[/b] ("Pacote Português", the name you'll see in the installer) adds 80 Portuguese films released between 1981 and 2005 to Mad Television Tycoon. You'll find slow-burning art-house dramas, festival favourites, period epics, crime thrillers and the comedies that filled Portuguese cinemas, all made to fit the game:
+
+[list]
+[*]80 new films that turn up at the film market, the rental shop and the pirate dealer, and with your rivals
+[*]Parody titles and names, the way the game does its own films: "Argument Over", "The Liquid in the Veins", "Zone K", directed by "Manoel de Olivera" and "Joaquim Leirão"
+[*]80 new black-and-white pictures in the style of the game's own
+[*]An original one-line synopsis for every film
+[*]Ratings and audience potential based on awards and real ticket sales where known, so the arthouse classics score high with critics but draw small audiences, and the hits draw crowds
+[*]Release years, running times (2-4 blocks), age ratings and genres for every film
+[*]Country: Portugal
+[*]Portuguese players: switch the game to Portuguese to see the titles in Portuguese
+[*]194 directors and actors, credited on the films
+[/list]
+
+[size=4][b]The films[/b][/size]
+[spoiler]
+Year · English title (Portuguese title) · genre · director
+1981 · Argument Over (Discussão Acabada) · Drama/Historical · dir. João Botilho
+1981 · Francesca · Drama/Historical · dir. Manoel de Olivera
+1981 · Quilas, the Good Guy (Quilas, o Bom da Fita) · Comedy/Crime · dir. José Fonseca e Custa
+1982 · The Island of Sweethearts (A Ilha dos Namorados) · Drama/Historical · dir. Paulo Rocca
+1982 · Life Is OK?! (A Vida É ok?!) · Comedy · dir. Luís Galvão Tales
+1982 · Silverio (Silvério) · Drama/Fantasy · dir. João César Monteira
+1984 · Chronicle of the Bad Rascals (Crónica dos Maus Malandros) · Comedy/Crime · dir. Fernando Lupes
+1984 · The Living Man's Seat (O Lugar do Vivo) · Thriller/Mystery · dir. António-Pedro Vasconselos
+1985 · The Silk Slipper (Le Soulier de Soie) · Historical/Romantic · dir. Manoel de Olivera
+1986 · A Portuguese See You Later (Um Até Logo Português) · Anti-War Film/Drama · dir. João Botilho
+1986 · A Girl in Spring (Uma Rapariga na Primavera) · Drama · dir. Vítor Gonçalvez
+1987 · Ballad of the Beach of Cats (Balada da Praia dos Gatos) · Crime/Mystery · dir. José Fonseca e Custa
+1987 · The Dunce (O Tolo) · Drama/Historical · dir. José Álvaro Moraes
+1987 · Dear Violet (O Querido Violeta) · Comedy · dir. Artur Semeda
+1988 · The Man-Eaters (Os Antropófagos) · Fantasy/Historical · dir. Manoel de Olivera
+1988 · Complicated Times (Tempos Complicados) · Drama · dir. João Botilho
+1989 · The Liquid in the Veins (O Líquido das Veias) · Drama/Mystery · dir. Pedro Kosta
+1989 · Memories of the Orange House (Recordações da Casa Cor-de-Laranja) · Comedy/Drama · dir. João César Monteira
+1990 · No, or the Vain Glory of Obeying (Não, ou a Vã Glória de Obedecer) · Anti-War Film/Historical · dir. Manoel de Olivera
+1991 · The Divine Tragedy (A Divina Tragédia) · Drama · dir. Manoel de Olivera
+1991 · The Age of Minority (A Idade Menor) · Drama/Anti-War Film · dir. Teresa Villaverda
+1992 · The First Dive (O Primeiro Mergulho) · Drama · dir. João César Monteira
+1993 · Love and Little Fingers (Amor e Dedinhos da Mão) · Romantic/Historical · dir. Luís Filipe Rucha
+1993 · Mount Abraham (Monte Abraão) · Drama/Romantic · dir. Manoel de Olivera
+1994 · Basalt House (Casa de Basalto) · Drama · dir. Pedro Kosta
+1994 · Four Siblings (Quatro Irmãos) · Drama · dir. Teresa Villaverda
+1995 · God's Farce (A Farsa de Deus) · Comedy/Drama · dir. João César Monteira
+1995 · Eve and Adam (Eva e Adão) · Drama · dir. Joaquim Leirão
+1995 · The Hair (O Cabelo) · Drama/Romantic · dir. Joaquim Sopinho
+1995 · The Monastery (O Mosteiro) · Mystery/Drama · dir. Manoel de Olivera
+1995 · Signs of Smoke (Sinais de Fumo) · Drama/Romantic · dir. Luís Filipe Rucha
+1997 · Little Bones (Ossinhos) · Drama · dir. Pedro Kosta
+1997 · Sweet Temptation (Doce Tentação) · Drama/Romantic · dir. Joaquim Leirão
+1997 · Journey to the End of the World (Viagem ao Fim do Mundo) · Drama · dir. Manoel de Olivera
+1998 · Dribbling Fate (Driblar o Destino) · Drama · dir. Fernando Vendrel
+1998 · The Mutated (Os Mutados) · Drama · dir. Teresa Villaverda
+1998 · Purple Nightmare (Pesadelo Roxo) · Comedy/Romantic · dir. Fernando Fregata
+1998 · White Shoes (Sapatos Brancos) · Crime/Thriller · dir. João Canejo
+1998 · Zone K (Zona K) · Drama/Crime · dir. Leonel Vieyra
+1999 · The Postcard (O Postal) · Romantic/Drama · dir. Manoel de Olivera
+1999 · God's Wedding (O Casamento de Deus) · Comedy/Fantasy · dir. João César Monteira
+1999 · Purgatory (Purgatório) · Drama · dir. Joaquim Leirão
+1999 · Jorge · Drama · dir. António-Pedro Vasconselos
+2000 · Ice White (Branca de Gelo) · Drama · dir. João César Monteira
+2000 · Sergeants of April (Sargentos de Abril) · Drama/Historical · dir. Maria de Madeiros
+2000 · In Vanessa's Room (No Quarto da Vanessa) · Documentation/Drama · dir. Pedro Kosta
+2000 · The Spectre (O Espectro) · Drama/Erotic · dir. João Pedro Rodriguez
+2000 · Utopian Ideas (Ideias Utópicas) · Historical/Drama · dir. Manoel de Olivera
+2000 · Sunfish (Peixe-Sol) · Drama · dir. José Álvaro Moraes
+2001 · The Root of Love (A Raiz do Amor) · Drama · dir. Paulo Rocca
+2001 · December 4th, 1980 (4 de Dezembro de 1980) · Drama/Historical · dir. Luís Filipe Rucha
+2001 · Deserving a Living (Merecer a Vida) · Drama · dir. João Canejo
+2001 · The Rip (Rasgão) · Drama/Crime · dir. Raquel Freira
+2001 · Staying Home (Fico em Casa) · Drama/Comedy · dir. Manoel de Olivera
+2001 · Water and Pepper (Água e Pimenta) · Drama · dir. Teresa Villaverda
+2002 · The Concrete Raft (A Jangada de Betão) · Fantasy/Science Fiction · dir. George Sluyzer
+2002 · The Forest (A Floresta) · Adventure/Historical · dir. Leonel Vieyra
+2002 · The Dolphin (O Golfinho) · Mystery/Drama · dir. Fernando Lupes
+2002 · The Certainty Principle (O Princípio da Certeza) · Drama · dir. Manoel de Olivera
+2003 · The Policeperson (A Pessoa Polícia) · Drama · dir. Joaquim Sopinho
+2003 · The Everlasting (Os Eternos) · Crime/Thriller · dir. António-Pedro Vasconselos
+2003 · Fasting (Jejum) · Drama · dir. José Álvaro Moraes
+2003 · A Silent Film (Um Filme Mudo) · Drama/Comedy · dir. Manoel de Olivera
+2003 · Yo-Yo (Ioiô) · Drama · dir. João César Monteira
+2004 · The Face You Have (A Cara que Tens) · Comedy/Fantasy · dir. Miguel Gomez
+2004 · The Coast of Whispers (A Costa dos Sussurros) · Anti-War Film/Drama · dir. Margarida Cardozo
+2004 · Brave Andre (André Corajoso) · Drama · dir. Catarina Ruiva
+2004 · Kiss Me Twice · Romantic/Drama · dir. António da Cunha Tellez
+2004 · In Here (Cá Dentro) · Drama · dir. Fernando Lupes
+2004 · Bright Night (Noite Clara) · Crime/Thriller · dir. João Canejo
+2004 · The Miracle According to Solomon (O Milagre Segundo Salomão) · Romantic/Drama · dir. Mário Barrozo
+2004 · The Fifth Emperor (O Quinto Imperador) · Historical/Drama · dir. Manoel de Olivera
+2004 · Portugal Ltd. (Portugal Lda.) · Thriller/Drama · dir. Ruy Guerro
+2004 · Little Luck (Sorte Pouca) · Mystery/Crime · dir. Fernando Fregata
+2005 · Andreia · Drama · dir. Margarida Gill
+2005 · Alicia · Drama/Mystery · dir. Marco Mertins
+2005 · The Crime of Father Antonio (O Crime do Padre António) · Drama/Romantic · dir. Carlos Coelho da Selva
+2005 · The Realist (O Realista) · Drama · dir. João Botilho
+2005 · Odilia (Odília) · Drama · dir. João Pedro Rodriguez
+2005 · A Blow in the Dark (Um Golpe no Escuro) · Crime/Action · dir. Leonel Vieyra
+[/spoiler]
+
+[size=4][b]Install[/b][/size]
+[list=1]
+[*]Close the game.
+[*]Download the zip. Optional, to avoid Windows' security prompts: right-click the zip > Properties > tick "Unblock" > OK.
+[*]Right-click the zip > Extract All. Don't run anything from inside the zip.
+[*]Open the extracted folder and double-click [b]Install.bat[/b].
+[list]
+[*]It finds the game through Steam. If it can't, it asks for the game folder (Steam: right-click the game > Manage > Browse local files).
+[*]Windows may say "The publisher could not be verified". Click Run. Batch files can't carry a publisher signature; Install.bat and install.ps1 are plain text, so you can open them in Notepad and read what they do.
+[*]If Windows says "Windows protected your PC", click "More info", then "Run anyway".
+[*]Steam installs games under Program Files, which is write-protected, so the installer will usually ask for administrator rights. Click Yes.
+[/list]
+[*]Start a [b]new[/b] game.
+[/list]
+No Python or other software needed: the installer uses Windows PowerShell, which comes with Windows.
+Mod managers (Vortex etc.) aren't supported: use Install.bat.
+
+[size=4][b]After a game update[/b][/size]
+Run Install.bat again. Updates can add films and pictures of their own, and the mod's files need to take them in. Keep the extracted folder for this.
+
+[size=4][b]Uninstall[/b][/size]
+Double-click [b]Uninstall.bat[/b]. It removes only the files the installer wrote and that are still unchanged. The game is then back to its own films.
+
+[size=4][b]Compatibility[/b][/size]
+[list]
+[*]Tested with game version EA2026-10-15A.
+[*][b]Conflicts:[/b] can't be combined with other mods that replace the game's film database (DATABASE\MOD\ItemsData.json and CastData.json), such as Real Names or the Polish database. The game loads only one of these files, so only one such mod can be active. The installer refuses to overwrite another mod's files.
+[*]Existing saves: start a new game to be sure everything shows up.
+[/list]
+
+[size=4][b]What it changes[/b][/size]
+[list]
+[*]EXTERN\DATABASE\MOD\ItemsData.json and CastData.json: your game's own films and cast, plus this mod's entries
+[*]EXTERN\DATABASE\MOD\pt_films_install.json: the install record (every file written, with a fingerprint)
+[*]EXTERN\SCRN\<GENRE>\: 80 pictures, numbered after the game's own
+[/list]
+No game files are replaced, and the download contains no game data.
+
+[size=4][b]About the pictures (AI-generated content)[/b][/size]
+The pictures are AI-generated lookalikes, each based on a still from its film: 60 made from a written description of the still and 20 by restyling the still itself. They're turned black and white to match the game and show made-up people in place of the films' actors.
+
+[size=4][b]For modders[/b][/size]
+Film IDs 9000001-9000080, cast IDs 9000001-9000194. Pictures go after the vanilla ones in each genre folder, and the installer stops if the numbering has gaps.
+
+[size=4][b]Credits[/b][/size]
+Data researched from IMDb, Portuguese and English Wikipedia, ICA (Instituto do Cinema e Audiovisual) box-office records, and Cinecartaz, CinePT and TVCine for age ratings. Synopses are original.
+Made by pcmoreno. Also on ModDB.
+------------------------------------------------------------------------
+
+PERMISSIONS & CREDITS TAB (suggested; your call)
+- Upload to other sites: ask me first
+- Modify / convert: ask me first
+- Use assets in other mods: ask me first (the pictures and data)
+- Asset use in paid mods: not allowed

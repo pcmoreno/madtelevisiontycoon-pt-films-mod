@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+
+# generated mod output (rebuild with tools/), including the release zip
+build/
+
+# downloaded real film stills (copyrighted) and the converted 640x480 PNGs (made by tools/convert_stills.py)
+stills/stills/images/
+stills/png/
+
+# Windows download markers
+*Zone.Identifier

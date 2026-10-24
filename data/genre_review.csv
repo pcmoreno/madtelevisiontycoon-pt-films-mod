@@ -1,0 +1,81 @@
+﻿year,title,old_genre,genre,genre_code,subgenre,subgenre_code,confidence,tmdb_genres,wikidata_genres,note
+1981,Conversa Acabada,Drama,Drama,1,Historical,29,high,Drama,"biographical film, drama film","Biopic of poets Pessoa and Sá-Carneiro, 1910s"
+1981,Francisca,Drama,Drama,1,Historical,29,high,Drama,biographical film,19th-century costume drama
+1981,"Kilas, o Mau da Fita",Comedy,Comedy,16,Crime,5,high,"Crime, Drama","drama film, mystery film",Satirical comedy about a small-time crook
+1982,A Ilha dos Amores,Drama,Drama,1,Historical,29,high,Drama,,"Biopic of Wenceslau de Moraes in Japan, c. 1900"
+1982,A Vida É Bela?!,Crime,Comedy,16,,,confirmed,"Comedy, Crime, Music",comedy film,Comedy (confirmed by user)
+1982,Silvestre,Fantasy,Drama,1,Fantasy,4,confirmed,"History, Drama",drama film,Drama / Fantasy (confirmed by user)
+1984,Crónica dos Bons Malandros,Comedy,Comedy,16,Crime,5,high,Comedy,comedy film,Heist comedy
+1984,O Lugar do Morto,Thriller,Thriller,6,Mystery,8,high,"Drama, Mystery","drama film, mystery film, neo-noir",Neo-noir
+1985,Le Soulier de Satin,Drama,Historical,29,Romantic,3,confirmed,"Drama, History",drama film,"Spanish Golden Age epic love story, 7 hours (confirmed by user)"
+1986,Um Adeus Português,Antiwar,Antiwar,14,Drama,1,high,Drama,drama film,Colonial war and its aftermath
+1986,Uma Rapariga no Verão,Drama,Drama,1,,,high,Drama,drama film,
+1987,Balada da Praia dos Cães,Crime,Crime,5,Mystery,8,high,"Crime, Drama",drama film,Investigation of a 1960 political murder
+1987,O Bobo,Drama,Drama,1,Historical,29,medium,Drama,drama film,Staging of a medieval play after 1974
+1987,O Querido Lilás,Comedy,Comedy,16,,,high,Comedy,comedy film,
+1988,Os Canibais,Horror,Fantasy,4,Historical,29,confirmed,"Drama, Fantasy",drama film,"Fantasy / Historical (confirmed by user); opera film, no musical genre in game"
+1988,Tempos Difíceis,Drama,Drama,1,,,high,Drama,drama film,Dickens adaptation
+1989,O Sangue,Drama,Drama,1,Mystery,8,high,"Drama, Mystery",drama film,"TMDB Drama, Mystery"
+1989,Recordações da Casa Amarela,Comedy,Comedy,16,Drama,1,confirmed,"Comedy, Drama",comedy film,Comedy drama (confirmed by user)
+1990,"Non, ou a Vã Glória de Mandar",Antiwar,Antiwar,14,Historical,29,high,"War, Drama, History","drama film, historical film, war film",Colonial war framing Portuguese military history
+1991,A Divina Comédia,Drama,Drama,1,,,high,Drama,drama film,
+1991,A Idade Maior,Drama,Drama,1,Antiwar,14,medium,Drama,,Childhood shaped by the colonial war
+1992,O Último Mergulho,Drama,Drama,1,,,high,Drama,drama film,
+1993,Amor e Dedinhos de Pé,Romance,Romantic,3,Historical,29,high,Drama,"drama film, romantic drama",Period romance in old Macau
+1993,Vale Abraão,Romance,Drama,1,Romantic,3,confirmed,Drama,drama film,Bovary adaptation (confirmed by user)
+1994,Casa de Lava,Drama,Drama,1,,,high,Drama,drama film,
+1994,Três Irmãos,Drama,Drama,1,,,high,Drama,drama film,
+1995,A Comédia de Deus,Comedy,Comedy,16,Drama,1,confirmed,"Comedy, Drama","comedy film, drama film",Comedy drama (confirmed by user)
+1995,Adão e Eva,Comedy,Drama,1,,,confirmed,Drama,"LGBTQ-related film, drama film",Drama (confirmed by user)
+1995,Corte de Cabelo,Drama,Drama,1,Romantic,3,medium,Drama,drama film,Couple on their wedding day
+1995,O Convento,Mystery,Mystery,8,Drama,1,high,"Mystery, Drama","drama film, mystery film, psychological drama",Faust-themed mystery
+1995,Sinais de Fogo,Drama,Drama,1,Romantic,3,high,"Drama, Romance","drama film, romance film","TMDB Drama, Romance"
+1997,Ossos,Drama,Drama,1,,,high,Drama,"art film, comedy drama",
+1997,Tentação,Drama,Drama,1,Romantic,3,high,"Drama, Romance",romance film,"TMDB Drama, Romance"
+1997,Viagem ao Princípio do Mundo,Drama,Drama,1,,,high,Drama,"biographical film, psychological drama film, road movie",
+1998,Fintar o Destino,Drama,Drama,1,,,high,Drama,drama film,
+1998,Os Mutantes,Drama,Drama,1,,,high,Drama,drama film,
+1998,Pesadelo Cor de Rosa,Comedy,Comedy,16,Romantic,3,high,"Comedy, Romance",romance film,Romantic comedy
+1998,Sapatos Pretos,Crime,Crime,5,Thriller,6,high,"Drama, Crime",,Wife plots her husband's murder
+1998,Zona J,Drama,Drama,1,Crime,5,high,"Crime, Drama, Romance","crime film, drama film, romance film","TMDB Crime, Drama, Romance"
+1999,A Carta,Romance,Romantic,3,Drama,1,high,Drama,drama film,La Princesse de Clèves adaptation
+1999,As Bodas de Deus,Comedy,Comedy,16,Fantasy,4,high,Comedy,comedy film,God's messenger farce
+1999,Inferno,Thriller,Drama,1,,,confirmed,Drama,drama film,Drama (confirmed by user); synopsis still unverified
+1999,Jaime,Drama,Drama,1,,,high,Drama,drama film,Child labour drama
+2000,Branca de Neve,Drama,Drama,1,,,confirmed,"Drama, Fantasy",drama film,"Drama (confirmed by user). User: ""the most cult movie possible"", mostly black screen; should carry Cult flag"
+2000,Capitães de Abril,Antiwar,Drama,1,Historical,29,confirmed,"Drama, History","drama film, historical film",Drama / Historical (confirmed by user)
+2000,No Quarto da Vanda,Documentary,Documentary,11,Drama,1,high,Drama,art film,Docufiction
+2000,O Fantasma,Drama,Drama,1,Erotic,28,high,Drama,drama film,Explicit erotic drama; Erotic as subgenre (code 28 is inferred)
+2000,Palavra e Utopia,Drama,Historical,29,Drama,1,confirmed,History,biographical film,"Life of Padre António Vieira, 17th century (confirmed by user)"
+2000,Peixe-Lua,Drama,Drama,1,,,high,Drama,,
+2001,A Raiz do Coração,Fantasy,Drama,1,,,confirmed,Drama,drama film,Drama (confirmed by user)
+2001,Camarate,Mystery,Drama,1,Historical,29,confirmed,"Drama, Action",drama film,Drama / Historical (confirmed by user)
+2001,Ganhar a Vida,Drama,Drama,1,,,high,Drama,drama film,
+2001,Rasganço,Drama,Drama,1,Crime,5,medium,"Crime, Drama",drama film,"TMDB Crime, Drama"
+2001,Vou Para Casa,Drama,Drama,1,Comedy,16,confirmed,Drama,"comedy drama, drama film",Drama / Comedy (confirmed by user)
+2001,Água e Sal,Drama,Drama,1,,,high,Drama,drama film,
+2002,A Jangada de Pedra,Fantasy,Fantasy,4,Science Fiction,2,high,"Fantasy, Comedy, Science Fiction",drama film,"Iberia breaks off from Europe; TMDB Fantasy, Comedy, SF"
+2002,A Selva,Adventure,Adventure,9,Historical,29,high,"Drama, Romance","drama film, romance film","Amazon rubber plantation, 1912"
+2002,O Delfim,Mystery,Mystery,8,Drama,1,high,Drama,drama film,
+2002,O Princípio da Incerteza,Drama,Drama,1,,,high,Drama,drama film,
+2003,A Mulher Polícia,Drama,Drama,1,,,high,Drama,drama film,
+2003,Os Imortais,Crime,Crime,5,Thriller,6,high,"Crime, Drama",drama film,Colonial-war veterans plan a heist
+2003,Quaresma,Drama,Drama,1,,,high,Drama,drama film,
+2003,Um Filme Falado,Drama,Drama,1,Comedy,16,confirmed,"Drama, History",comedy film,Drama / Comedy (confirmed by user)
+2003,Vai~e~Vem,Drama,Drama,1,,,confirmed,"Drama, Comedy",comedy drama,"Drama only, no subgenre (confirmed by user)"
+2004,A Cara que Mereces,Comedy,Comedy,16,Fantasy,4,high,"Comedy, Fantasy",comedy film,"TMDB Comedy, Fantasy"
+2004,A Costa dos Murmúrios,Antiwar,Antiwar,14,Drama,1,high,Drama,drama film,Colonial war in Mozambique
+2004,André Valente,Drama,Drama,1,,,high,Drama,drama film,
+2004,Kiss Me,Romance,Romantic,3,Drama,1,high,Drama,drama film,
+2004,Lá Fora,Drama,Drama,1,,,high,Drama,drama film,
+2004,Noite Escura,Crime,Crime,5,Thriller,6,high,"Crime, Drama",crime film,"TMDB Crime, Drama"
+2004,O Milagre Segundo Salomé,Drama,Romantic,3,Drama,1,confirmed,Drama,drama film,Romantic / Drama (confirmed by user)
+2004,O Quinto Império,Drama,Historical,29,Drama,1,confirmed,"History, Drama",drama film,"King Sebastian, 16th century (confirmed by user)"
+2004,Portugal S.A.,Comedy,Thriller,6,Drama,1,confirmed,"Drama, Thriller",drama film,"Political thriller; TMDB Drama, Thriller. Old data said Comedy (confirmed by user)"
+2004,Sorte Nula,Comedy,Mystery,8,Crime,5,confirmed,"Mystery, Crime",thriller film,Mystery / Crime (confirmed by user)
+2005,Adriana,Drama,Drama,1,,,high,Drama,drama film,
+2005,Alice,Drama,Drama,1,Mystery,8,high,"Drama, Romance",drama film,Father searching for his missing daughter
+2005,O Crime do Padre Amaro,Drama,Drama,1,Romantic,3,high,Drama,drama film,Priest and young woman affair
+2005,O Fatalista,Drama,Drama,1,,,confirmed,Drama,drama film,"Drama only, no subgenre (confirmed by user)"
+2005,Odete,Drama,Drama,1,,,high,Drama,drama film,
+2005,Um Tiro no Escuro,Crime,Crime,5,Action,0,high,"Action, Crime, Drama, Thriller",action film,"Bank-robbery gang; TMDB Action, Crime, Thriller"
